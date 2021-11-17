@@ -1,8 +1,113 @@
 *{
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    margin: 0;
-    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
+
+section.login{
+    display: flex;
+    width: 100%;
+    min-height: 100%;
+    background-image: linear-gradient(rgb(41, 41, 41, 0.95), rgb(41, 41, 41, 0.95)), url(images/login-background.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+div.curve{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 90%;
+    min-height: 100%;
+    background-image: linear-gradient(rgb(41, 41, 41, 0.75), rgb(41, 41, 41, 0.75)), url(images/login-background.jpg);
+    background-repeat: no-repeat;
+    background-size: 110.75% 100%;
+    overflow: hidden;
+    border-top-right-radius: 400px;
+    border-bottom-right-radius: 400px;
+    box-shadow: 10px 0 10px -10px black;
+    border-left: 1px solid black;
+}
+
+div.login-fields{
+    display: flex;
+    flex-direction: column;
+    background-color: #DAD6CA;
+    margin-right: 5%;
+    width: 40%;
+    height: 80%;
+    border: 1px solid black;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-top-left-radius: 5%;
+    border-bottom-left-radius: 5%;
+    box-shadow: 10px 10px 10px -10px black;
+}
+
+h1.dine{
+    padding-top: 25%;
+    padding-left: 25%;
+    font-size: 26pt;
+    color: #B32C06;
+}
+
+h3.log-in{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-size: 20pt;
+    padding-left: 35%;
+}
+
+input[value]{
+    color: #53514d;
+}
+
+label{
+    font-size: 16pt;
+    margin-left: 10%;
+}
+
+input[type=text]{
+    font-size: 12pt;
+    background-color: #DAD6CA;
+    border-style: none;
+    padding: 2%;
+    width: 70%;
+    margin-left: 10%;
+    border: 1px solid #FFFAEF;
+    margin-top: 2%;
+    margin-bottom: 5%;
+}
+
+input[type=submit]{
+    font-size: 20pt;
+    padding: 2%;
+    border-style: none;
+    border-radius: 10px;
+    color: #FFFAEF;
+    background-color: #B32C06;
+    margin-left: 33%;
+    margin-top: 3%;
+}
+
+input[type=submit]:hover{
+    box-shadow: 5px 5px 5px rgb(70, 70, 70);
+    transition: 0.3s;
+    background-color: #8a2408;
+}
+
+
+
+/* div.colors{
+    color: #DAD6CA;
+    color: #FFFAEF;
+    color: #FFFFFF;
+    color: #B32C06;
+    color: #86B8B1;
+} */
+
 .carousel-flex{
     height: 200px;
 }
+
