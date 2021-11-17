@@ -106,3 +106,8 @@ input[type=submit]:hover{
     color: #B32C06;
     color: #86B8B1;
 } */
+
+.carousel-flex{
+    height: 200px;
+}
+
