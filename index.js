@@ -1,7 +1,7 @@
 $(document).ready(function(){
     $('.slider1').slick({
         accessibility: true,
-        slidesToShow:4,
+        slidesToShow:3,
         slidesToScroll:1,
         draggable:true,
         infinte:true,
@@ -13,7 +13,7 @@ $(document).ready(function(){
 $(document).ready(function(){
     $('.slider2').slick({
         accessibility: true,
-        slidesToShow:4,
+        slidesToShow:3,
         slidesToScroll:1,
         draggable:true,
         infinte:true,
@@ -25,7 +25,7 @@ $(document).ready(function(){
 $(document).ready(function(){
     $('.slider3').slick({
         accessibility: true,
-        slidesToShow:4,
+        slidesToShow:3,
         slidesToScroll:1,
         draggable:true,
         infinte:true,
@@ -37,7 +37,7 @@ $(document).ready(function(){
 $(document).ready(function(){
     $('.slider4').slick({
         accessibility: true,
-        slidesToShow:4,
+        slidesToShow:3,
         slidesToScroll:1,
         draggable:true,
         infinte:true,
