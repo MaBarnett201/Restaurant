@@ -52,6 +52,10 @@ h1.dine{
     color: #B32C06;
 }
 
+h1.signup{
+    padding-top: 10%;
+}
+
 .header{
     display: flex;
     justify-content: center;
@@ -106,6 +110,21 @@ input[type=submit]:hover{
     background-color: #8a2408;
 }
 
+h5.signup{
+    padding-top: 10%;
+    padding-left: 2%;
+    font-size: 12pt;
+    margin-left: 10%;
+}
+
+a.signup{
+    text-decoration: none;
+    color: #248f81;
+}
+
+a.signup:hover{
+    text-decoration: underline;
+}
 
 
 /* div.colors{
