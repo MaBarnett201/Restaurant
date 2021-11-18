@@ -132,21 +132,48 @@ input[type=submit]:hover{
     height: 200px;
     width: 100%;
 }
+.item-price{
+    display: flex;
+    justify-content: space-between;
+    padding: 3%;
+    height: 30px;
+    width: 100%;
+}
 .item-desc{
     display: flex;
     justify-content: space-between;
     padding: 3%;
-    height: 100px;
+    height: 100%;
     width: 100%;
+    font-size: 13px;
 }
 .arrows{
     display: flex;
     justify-content: right;
-    width: 90%;
+    align-items: flex-end;
+    width: 45%;
     margin: auto;
-    margin-top: 10px;
+    margin: 10px 0;
 }
 .apps{
+    /* display: flex; */
     background-color: #FFFAEF;
     margin: none;
+}
+.title-apps{
+    display: flex;
+    justify-content: left;
+    width: 45%;
+    margin: auto;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+.title-flex{
+    display: flex;
+    width: 90%;
+    margin: auto;
+}
+.food-title-color{
+    color: #B32C06;
 }
