@@ -1,6 +1,10 @@
 <html>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link src="stylesheet" href="styleSheet.css">
     <style>
+        *{
+            font-family:Arial, Helvetica, sans-serif
+        }
         html{
             font-size:200%;
             background-color:#86B8B1
@@ -85,15 +89,26 @@
         <br/>
         <div class=columnmain style=width:45%>
             <div class=column style=float:left;margin:2px>
-            <a href=# class=btn>Back to review</a>
+            <a href=# class=btn style=text-decoration:none>Back to review</a>
             </div>
             <div class=column style=float:right;margin:2px>
-            <a href=# class=btn>Checkout</a>
+            <li onclick=cRedit() class=btn style=cursor:pointer>Credit</li>
+            <li onclick=dEbit() class=btn style=cursor:pointer>Debit</li>
+            <li onclick=cAsh() class=btn style=cursor:pointer>Cash</li>
+            </div>
             </div>
         </div>
     </div>
     </body>
     <script>
-
+        function cRedit(){
+            prompt("Please enter your credit card information")
+        }
+        function dEbit(){
+            prompt("Please enter your card information")
+        }
+        function cAsh(){
+            prompt("Please enter CONFIRM to confirm your order as a cash purchase")
+        }
     </script>
 </html>
