@@ -36,7 +36,7 @@ div.login-fields{
     background-color: #DAD6CA;
     margin-right: 5%;
     width: 40%;
-    height: 80%;
+    min-height: 80%;
     border: 1px solid black;
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
@@ -218,15 +218,18 @@ div.mng-box{
     border-radius: 10px;
     box-shadow: 5px 5px 5px black;
     margin-top: 2%;
+}
 
 .slider-flex{
     display: flex;
     height: 100%;
 }
+
 .slider-flex-left{
     height: 100%;
     width: 66%;
 }
+
 .slider-flex-right{
     height: 100%;
     width: 34%;
