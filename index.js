@@ -45,3 +45,7 @@ $(document).ready(function(){
         nextArrow: $('.next4'),
     });
 });
+$('#sidebar').stickySidebar({
+    topSpacing: 60,
+    bottomSpacing: 60
+  });

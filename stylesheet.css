@@ -239,3 +239,12 @@ div.mng-box{
     margin-top: 52px;
 
 }
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.sidebar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+  }
