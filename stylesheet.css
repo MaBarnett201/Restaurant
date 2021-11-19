@@ -222,7 +222,7 @@ div.mng-box{
 
 .slider-flex{
     display: flex;
-    height: 100%;
+    height: 1450px;
 }
 
 .slider-flex-left{
@@ -231,7 +231,7 @@ div.mng-box{
 }
 
 .slider-flex-right{
-    height: 100%;
+    height: 600px;
     width: 34%;
     border: 2px solid gray;
     background-color: white;
