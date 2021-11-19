@@ -197,6 +197,28 @@ a.signup:hover{
 .food-title-color{
     color: #B32C06;
 }
+
+
+section.manager-options{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 100%;
+    background-image: linear-gradient(rgb(41, 41, 41, 0.75), rgb(41, 41, 41, 0.75)), url(images/login-background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+div.mng-box{
+    display: flex;
+    width: 800px;
+    height: 250px;
+    background-color: #DAD6CA;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px black;
+    margin-top: 2%;
+
 .slider-flex{
     display: flex;
     height: 100%;
@@ -212,4 +234,5 @@ a.signup:hover{
     background-color: white;
     margin-right: 40px;
     margin-top: 52px;
+
 }
