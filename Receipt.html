@@ -36,6 +36,12 @@
             transition: 0.3s;
             background-color: #8a2408
         }
+        .placeItems{
+            opacity:1
+        }
+        .totalItems{
+            opacity:1
+        }
     </style>
     <body>
         <div class=columnmain>
@@ -45,37 +51,88 @@
         <div class=column>
         <h1 style=font-size:150%>Customer Name:</h1>
         <div class=column style=margin:2px>
-        <p>Jeff</p>
+        <p id=cname></p>
         </div>
         </div>
         <div class=column>
         <h1 style=font-size:150%>Items purchased:</h1>
         <div class=column style=margin:2px>
-        <p>Item 1</p>
-        </div>
-        <div class=column style=margin:2px>
-        <p>Item 2</p>
-        </div>
-        <div class=column style=margin:2px>
-        <p>Item 3</p>
+        <p id=Items></p>
         </div>
         <h1 style=font-size:150%>Cost:</h1>
         <div class=column style=margin:2px>
-        <p>$0.00</p>
+        <p id=Cost></p>
         </div>
         <h1 style=font-size:120%>Tip:</h1>
         <div class=column style=margin:2px>
-        <p>$0.00</p>
+        <p id=tip></p>
         </div>
         <h1 style=font-size:150%>Time Required To Complete Order:</h1>
         <div class=column style=margin:2px>
-        <p>00.00.00</p>
+        <p id=time></p>
         </div>
         <li class=btn2 style=cursor:context-menu>Print Receipt</li>
         <a href=index.html class=btn2 style=text-decoration:none;cursor:context-menu>Log Out</a>
     </div>
     </body>
     <script>
+        //function addItem(){
+        //var item=(Whatever the item is named)
+        //(When item was selected from the menu){
+        //var paragraph=document.getElementByID("Items");
+        //var text=document.createTextNode(item)
+        //paragraph.appendChild(text)
+        //(If there is more than one item){
+        //let neWp=document.createElement("p");
+        //(Give element id of Items)
+        //}
+        //}
+        //}
+        
+        //function addCost(){
+        //var cost=(Whatever the cost is)
+        //(When item was selected from the menu){
+        //var paragraph=document.getElementByID("Cost");
+        //var text=document.createTextNode(cost)
+        //paragraph.appendChild(text)
+        //(If there is more than one item){
+        //let neWp=document.createElement("p");
+        //(Give element id of Cost)
+        //}
+        //}
+        //}
+        
+        //function addTip(){
+        //var CTip=(Whatever the tip is)
+        //(When item was selected from the menu){
+        //var paragraph=document.getElementByID("tip");
+        //var text=document.createTextNode(CTip)
+        //paragraph.appendChild(text)
+        //}
+        //}
 
+        //function findTime(){
+        //var CTime=(Whatever the time is)
+        //(When item was selected from the menu){
+        //var paragraph=document.getElementByID("time");
+        //var text=document.createTextNode(CTime)
+        //paragraph.appendChild(text)
+        //}
+        //}
+
+        //function totalItems(){
+        //var name=(Customer name)
+        //var totalcost=(All costs added up. May need to make a separate function which adds up the costs)
+        //(When customer has name){
+        //var paragraph=document.getElementByID("cname");
+        //var text=document.createTextNode(name)
+        //paragraph.appendChild(text)
+        //}
+        //(When items have total cost){
+        //var paragraph=document.getElementByID("totalc");
+        //var text=document.createTextNode(totalcost)
+        //paragraph.appendChild(text)
+        //}
+        //}
     </script>
 </html>
