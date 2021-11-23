@@ -37,12 +37,19 @@
             transition: 0.3s;
             background-color: #8a2408
         }
+        .placeItems{
+            opacity:1
+        }
+        .totalItems{
+            opacity:1
+        }
     </style>
     <body>
         <div class=columnmain>
         <div class=column style=text-align:center>
             <h3>Dine & Dash Checkout</h3>
         </div>
+        <div class=totalItems>
         <div class=column>
             <h1 style=font-size:150%>Customer Name</h1>
             </div>
@@ -52,32 +59,25 @@
             <p style=font-size:150%><b>Items:</b></p>
         </div>
         <div class=column style=float:right;width:10px;height:10px;margin:2px>
-            <p style=font-size:150%><b>Cost:</b></p>
+            <p style=font-size:150%><b>Cost:<p id=totalc></p></b></p>
         </div>
         </div>
+    </div>
         <br/>
         <br/>
         <br/>
         <br/>
             <hr>
+            <div class=placeItems>
             <div class=column style=width:100%;float:left>
                 <div class=column style=float:left;margin:2px>
-            <p>Item 1</p>
+            <p id=Items></p>
             </div>
             <div class=column style=float:right;margin:2px>
-            <p>Cost 1</p>
+            <p id=Cost></p>
             </div>
             </div>
-            <br/>
-            <br/>
-            <div class=column style=width:100%;float:left>
-                <div class=column style=float:left;margin:2px>
-            <p>Item 2</p>
-            </div>
-            <div class=column style=float:right;margin:2px>
-            <p>Cost 2</p>
-            </div>
-            </div>
+        </div>
             <br/>
             <br/>
             <br/>
@@ -112,5 +112,43 @@
         function cAsh(){
             prompt("Please enter CONFIRM to confirm your order as a cash purchase")
         }
+        //function addItem(){
+        //var item=(Whatever the item is named)
+        //(When item was selected from the menu){
+        //var paragraph=document.getElementByID("Items");
+        //var text=document.createTextNode(item)
+        //paragraph.appendChild(text)
+        //(If there is more than one item){
+        //let neWp=document.createElement("p");
+        //(Give element id of Items)
+        //}
+        //}
+        //}
+        //function addCost(){
+        //var cost=(Whatever the cost is)
+        //(When item was selected from the menu){
+        //var paragraph=document.getElementByID("Cost");
+        //var text=document.createTextNode(cost)
+        //paragraph.appendChild(text)
+        //(If there is more than one item){
+        //let neWp=document.createElement("p");
+        //(Give element id of Cost)
+        //}
+        //}
+        //}
+        //function totalItems(){
+        //var name=(Customer name)
+        //var totalcost=(All costs added up. May need to make a separate function which adds up the costs)
+        //(When customer has name){
+        //var paragraph=document.getElementByID("cname");
+        //var text=document.createTextNode(name)
+        //paragraph.appendChild(text)
+        //}
+        //(When items have total cost){
+        //var paragraph=document.getElementByID("totalc");
+        //var text=document.createTextNode(totalcost)
+        //paragraph.appendChild(text)
+        //}
+        //}
     </script>
 </html>
