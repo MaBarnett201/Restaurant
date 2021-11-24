@@ -3,114 +3,114 @@
     <link src="stylesheet" href="styleSheet.css">
     <style>
         *{
-            font-family:Arial, Helvetica, sans-serif
+            font-family:Arial, Helvetica, sans-serif;
         }
+
         html{
-            font-size:200%;
             background-image: linear-gradient(rgb(41, 41, 41, 0.75), rgb(41, 41, 41, 0.75)), url(images/login-background.jpg);
-            background-repeat:no-repeat;
-            background-size:100%
+            background-repeat: no-repeat;
+            background-size: 100%;
         }
+
         .columnmain{
             background-color:#FFFAEF;
-            width:40%;
-            margin-left:auto;
-            margin-right:auto;
-            display:block;
-            padding:9px;
-            border-radius:10px
+            width: 40%;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            padding: 9px;
+            border-radius: 10px;
         }
-        .column{
-            opacity:1
-        }
+    
         .btn2{
             padding: 10px 30px;
-            font-weight:300;
-            border-radius:10px;
-            color:#fff;
+            font-weight: 300;
+            border-radius: 10px;
+            color: #FFFAEF;
             background-color: #B32C06;
-            border: 1px solid #B32C06;
+            border-style: none;
             display: inline-block;
         }
+
         .btn2:hover{
-            box-shadow:5px 5px 5px rgb(70, 70, 70);
+            box-shadow: 5px 5px 5px rgb(31, 31, 31);
             transition: 0.3s;
-            background-color: #8a2408
+            background-color: #8a2408;
         }
+
         .placeItems{
-            opacity:1
+            opacity: 1;
         }
+
         .totalItems{
-            opacity:1
+            opacity: 1;
         }
+        
     </style>
     <body>
         <div class=columnmain>
-        <div class=column style=text-align:center>
-            <h3>Dine & Dash Checkout</h3>
-        </div>
-        <div class=totalItems>
-        <div class=column>
-            <h1 style=font-size:150%>Customer Name</h1>
+            <div class=column style="text-align:center;">
+                <h1>Dine & Dash Checkout</h1>
             </div>
+
+            <div class=totalItems>
+                <div class=column>
+                    <h3>Customer Name</h3>
+                </div>
+
+                <br/>
+
+                <div class=columnmain style="width:84%;float:left;">
+                    <div class=column style="float:left;width:10px;height:10px;margin:2px;">
+                        <p style="font-size:150%;"><b>Items:</b></p>
+                    </div>
+    
+                    <div class=column style="float:right;width:10px;height:10px;margin:2px;">
+                        <p style="font-size:150%;"><b>Cost:</b></p>
+                    </div>
+                </div>
+            </div>
+
             <br/>
-            <div class=columnmain style=width:84%;float:left>
-                <div class=column style=float:left;width:10px;height:10px;margin:2px>
-            <p style=font-size:150%><b>Items:</b></p>
-        </div>
-        <div class=column style=float:right;width:10px;height:10px;margin:2px>
-            <p style=font-size:150%><b>Cost:<p id=totalc></p></b></p>
-        </div>
-        </div>
-    </div>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
+            <br/>
+            <br/>
+            <br/>
+            
             <hr>
+
             <div class=placeItems>
-            <div class=column style=width:100%;float:left>
-                <div class=column style=float:left;margin:2px>
-            <p id=Items></p>
+                <div class=column style=width:100%;float:left>
+                    <div class=column style=float:left;margin:2px>
+                        <p id=Items></p>
+                    </div>
+
+                    <div class=column style=float:right;margin:2px>
+                        <p id=Cost></p>
+                    </div>
+                </div>
             </div>
-            <div class=column style=float:right;margin:2px>
-            <p id=Cost></p>
-            </div>
-            </div>
+
+            <br/>
+            <br/>
+            <br/>
+            <br/>
         </div>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-        </div>
+
         <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
+
         <div class=column style=width:45%;margin-left:auto;margin-right:auto;display:block;>
-            <div class=column style=float:left;margin:2px>
-            <a href=Restaurant_Review.html class=btn2 style=text-decoration:none;cursor:context-menu>Back to review</a>
+            <div class=column style=float:left;margin-left:15%>
+                <a href=Restaurant_Review.html class=btn2 style=text-decoration:none;cursor:context-menu>Back to review</a>
             </div>
-            <div class=column style=float:right;margin:2px>
-            <li onclick=cRedit() class=btn2 style=cursor:context-menu>Credit</li>
-            <li onclick=dEbit() class=btn2 style=cursor:context-menu>Debit</li>
-            <li onclick=cAsh() class=btn2 style=cursor:context-menu>Cash</li>
-            </div>
+
+            <div class=column style=float:right;margin-right:15%>
+                <li onclick=payment() class=btn2 style=cursor:context-menu>Confirm Checkout</li>
             </div>
         </div>
-    </div>
     </body>
     <script>
-        function cRedit(){
-            prompt("Please enter your credit card information")
-        }
-        function dEbit(){
-            prompt("Please enter your card information")
-        }
-        function cAsh(){
-            prompt("Please enter CONFIRM to confirm your order as a cash purchase")
+        function payment(){
+            prompt("Please enter CONFIRM to confirm your order")
         }
         //function addItem(){
         //var item=(Whatever the item is named)
