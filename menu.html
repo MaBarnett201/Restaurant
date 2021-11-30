@@ -28,26 +28,26 @@
             </div>
             <div class="carousel-flex">
                 <div class="slider1">
-                    <div class="item">
+                    <div onclick="toCart()" class="item">
                         <img src="images/chicken fingers.jpg">
                         <div class="item-price">
-                            <p>Chicken Fingers ~~~~~</p>
-                            <p>$5.99</p>
+                            <p id="test">Chicken Fingers</p>
+                            <p id="test2">$5.99</p>
                         </div>
                         <p class="item-desc"><em>5 deep fried chicken breasts, breaded in our signature mix.</em></p>
                     </div>
-                    <div class="item">
+                    <div onclick="toCart2()" class="item">
                         <img src="images/eggrolls.jpg">
                         <div class="item-price">
-                            <p>Cheesesteak Eggrolls ~~</p>
-                            <p>$6.99</p>
+                            <p id="test3">Cheesesteak Eggrolls</p>
+                            <p id="test4">$6.99</p>
                         </div>
                         <p class="item-desc"><em>Rib eye steak, onions, peppers and provolone cheese, all wrapped up and fried to crispy perfection.</em></p>
                     </div>
-                    <div class="item">
+                    <div  class="item">
                         <img src="images/finger-sandwiches.jpg">
                         <div class="item-price">
-                            <p>Chicken Sandwiches ~~ </p>
+                            <p>Chicken Sandwiches</p>
                             <p>$4.99</p>
                         </div>
                         <p class="item-desc"><em>4 finger sandwiches with, breaded chicken pattie, lettuce, tomato between fresh baked white bread, with a light aioli sauce.</em></p>
@@ -55,12 +55,12 @@
                     <div class="item">
                         <img src="images/freshcut-pre-cut-vegetables.jpg">
                         <div class="item-price">
-                            <p>Raw Vegetables ~~~</p>
+                            <p>Raw Vegetables</p>
                             <p>$3.00</p>
                         </div>
                         <p class="item-desc"><em>A mix of fresh raw vegetables. Carrots, celery, and broccoli.</em></p>
                     </div>
-                    <div class="item">
+                    <div  class="item">
                         <img src="images/fried-pickles.jpg">
                         <div class="item-price">
                             <p>Fried Pickles ~~~~~</p>
@@ -187,12 +187,12 @@
                     <h1 class="food-title-color">Sides</h1>
                 </div>
                 <div class="arrows">
-                    <div class="previous3">Previous /</div>
-                    <div class="next3"> / Next</div>
+                    <div class="previous4">Previous /</div>
+                    <div class="next4"> / Next</div>
                 </div>
             </div>
             <div class="carousel-flex">
-                <div class="slider3">
+                <div class="slider4">
                     <div class="item">
                         <img src="images/chips.jpg">
                         <div class="item-price">
@@ -237,8 +237,13 @@
             </div>
         </article>
         </div>
-        <div class="slider-flex-right sidebar">
-           
+        <div id="sidebar" class="slider-flex-right sidebar">
+           <div class="sidebar-left">
+               <p class="sidebarItemName"></p>
+           </div>
+           <div class="sidebar-right">
+               <p class="sidebarItemPrice"></p>
+           </div>
         </div>
         </div>
         </div>
