@@ -2,78 +2,100 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style>
         *{
-            font-family:Arial, Helvetica, sans-serif
+            font-family:Arial, Helvetica, sans-serif;
         }
+
         html{
-            font-size:200%;
             background-image: linear-gradient(rgb(41, 41, 41, 0.75), rgb(41, 41, 41, 0.75)), url(images/login-background.jpg);
-            background-repeat:no-repeat;
-            background-size:100%
+            background-repeat: no-repeat;
+            background-size: 100%;
         }
+
         .columnmain{
-            width:40%;
-            margin-left:auto;
-            margin-right:auto;
-            display:block;
+            width: 40%;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
             background-color:#FFFAEF;
-            border-radius:10px;
-            padding:9px;
+            border-radius: 10px;
+            padding: 9px;
         }
+
         .column{
-            opacity:1
+            opacity: 1;
         }
+
         .btn2{
             padding: 10px 30px;
-            font-weight:300;
+            font-weight: 300;
             border-radius: 10px;
-            color:#fff;
+            color: #FFFAEF;
             background-color: #B32C06;
-            border: 1px solid #B32C06;
+            border-style: none;
             display: inline-block;
         }
+
         .btn2:hover{
-            box-shadow:5px 5px 5px rgb(70, 70, 70);
+            box-shadow: 5px 5px 5px rgb(31, 31, 31);
             transition: 0.3s;
-            background-color: #8a2408
+            background-color: #8a2408;
         }
+
         .placeItems{
-            opacity:1
+            opacity: 1;
         }
+
         .totalItems{
-            opacity:1
+            opacity: 1;
         }
+
     </style>
     <body>
         <div class=columnmain>
-        <div class=column style=text-align:center>
-        <h3>Dine & Dash Receipt</h3>
+            <div class=column style=text-align:center>
+                <h1>Dine & Dash Receipt</h1>
+            </div>
+
+            <div class=column>
+                <h3>Customer Name:</h3>
+                <div class=column style=margin:2px>
+                    <p id=cname></p>
+                </div>
+            </div>
+
+            <div class=column>
+                <h3>Items purchased:</h3>
+                <div class=column style=margin:2px>
+                    <p id=Items></p>
+                </div>
+
+                <h3>Cost:</h3>
+                <div class=column style=margin:2px>
+                    <p id=Cost></p>
+                </div>
+
+                <h3>Tip:</h3>
+                <div class=column style=margin:2px>
+                    <p id=tip></p>
+                </div>
+
+                <h3>Time Required To Complete Order:</h3>
+                <div class=column style=margin:2px>
+                    <p id=time></p>
+                </div>
+            </div>
         </div>
-        <div class=column>
-        <h1 style=font-size:150%>Customer Name:</h1>
-        <div class=column style=margin:2px>
-        <p id=cname></p>
+        <br>
+
+        <div class=column style="width:45%;margin-left:auto;margin-right:auto;display:block;">
+            <div class=column style="float:left;margin-left:27%;">
+                <li onclick=window.print() class=btn2 style=cursor:context-menu>Print Receipt</li>
+            </div>
+
+            <div class=column style="float:right;margin-right:27%">
+                <a href=index.html class=btn2 style=text-decoration:none;cursor:context-menu>Log Out</a>
+            </div>
         </div>
-        </div>
-        <div class=column>
-        <h1 style=font-size:150%>Items purchased:</h1>
-        <div class=column style=margin:2px>
-        <p id=Items></p>
-        </div>
-        <h1 style=font-size:150%>Cost:</h1>
-        <div class=column style=margin:2px>
-        <p id=Cost></p>
-        </div>
-        <h1 style=font-size:120%>Tip:</h1>
-        <div class=column style=margin:2px>
-        <p id=tip></p>
-        </div>
-        <h1 style=font-size:150%>Time Required To Complete Order:</h1>
-        <div class=column style=margin:2px>
-        <p id=time></p>
-        </div>
-        <li onclick=window.print() class=btn2 style=cursor:context-menu>Print Receipt</li>
-        <a href=index.html class=btn2 style=text-decoration:none;cursor:context-menu>Log Out</a>
-    </div>
     </body>
     <script>
         document.getElementbyClassName("Item").innerHTML=localStorage.getItem("Itemname")
