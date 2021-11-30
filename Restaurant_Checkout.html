@@ -110,16 +110,19 @@
     </body>
     <script>
         function payment(){
-            var check=prompt("Please enter CONFIRM to confirm your order")
+            var check=prompt("Please enter CONFIRM in all caps to confirm your order")
             if(check === "CONFIRM"){
-                location.replace("Receipt.html")
+                window.location.href="Receipt.html"
             }
         }
+        document.getElementbyClassName("Item").innerHTML=localStorage.getItem("Itemname")
+        document.getElementbyClassName("Item").innerHTML=localStorage.getItem("Itemprice")
+
         //function addItem(){
-        //var item=(Whatever the item is named)
+        //var thisitem=(Whatever the item is named)
         //(When item was selected from the menu){
         //var paragraph=document.getElementByID("Items");
-        //var text=document.createTextNode(item)
+        //var text=document.createTextNode(thisitem)
         //paragraph.appendChild(text)
         //(If there is more than one item){
         //let neWp=document.createElement("p");
@@ -127,6 +130,7 @@
         //}
         //}
         //}
+
         //function addCost(){
         //var cost=(Whatever the cost is)
         //(When item was selected from the menu){
@@ -139,6 +143,7 @@
         //}
         //}
         //}
+
         //function totalItems(){
         //var name=(Customer name)
         //var totalcost=(All costs added up. May need to make a separate function which adds up the costs)

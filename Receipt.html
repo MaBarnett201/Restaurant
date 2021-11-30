@@ -89,16 +89,18 @@
 
         <div class=column style="width:45%;margin-left:auto;margin-right:auto;display:block;">
             <div class=column style="float:left;margin-left:27%;">
-                <li class=btn2 style="text-decoration:none;cursor:context-menu;">Print Receipt</li>
+                <li onclick=window.print() class=btn2 style=cursor:context-menu>Print Receipt</li>
             </div>
 
             <div class=column style="float:right;margin-right:27%">
-                <a href=index.html class=btn2 style="text-decoration:none;cursor:context-menu;">Log Out</a>
+                <a href=index.html class=btn2 style=text-decoration:none;cursor:context-menu>Log Out</a>
             </div>
         </div>
-
     </body>
     <script>
+        document.getElementbyClassName("Item").innerHTML=localStorage.getItem("Itemname")
+        document.getElementbyClassName("Item").innerHTML=localStorage.getItem("Itemprice")
+
         //function addItem(){
         //var item=(Whatever the item is named)
         //(When item was selected from the menu){
