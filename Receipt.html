@@ -71,11 +71,14 @@
         <div class=column style=margin:2px>
         <p id=time></p>
         </div>
-        <li class=btn2 style=cursor:context-menu>Print Receipt</li>
+        <li onclick=window.print() class=btn2 style=cursor:context-menu>Print Receipt</li>
         <a href=index.html class=btn2 style=text-decoration:none;cursor:context-menu>Log Out</a>
     </div>
     </body>
     <script>
+        document.getElementbyClassName("Item").innerHTML=localStorage.getItem("Itemname")
+        document.getElementbyClassName("Item").innerHTML=localStorage.getItem("Itemprice")
+
         //function addItem(){
         //var item=(Whatever the item is named)
         //(When item was selected from the menu){
