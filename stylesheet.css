@@ -231,9 +231,10 @@ h1.mng-view{
     font-size: 26pt;
     padding-top: 1%;
     padding-left: 1%;
-    padding-bottom: .5%;
+    padding-bottom: .75%;
     text-align: center;
     color: #B32C06;
+    text-decoration: underline;
 }
 
 div.mng-view{
@@ -257,6 +258,17 @@ div.mng-stacking{
     color: #B32C06;
     padding-left: 5%;
     padding-right: 2.5%;
+    --ionicon-stroke-width: 20px;
+}
+
+.mng-orders{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 800%;
+    padding: 3% 0 0 0;
+    color: #B32C06;
     --ionicon-stroke-width: 20px;
 }
 
