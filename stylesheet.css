@@ -287,4 +287,33 @@ div.mng-stacking{
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-  }
+}
+.sidebar-flex{
+    display: flex;
+    height: 20px;
+    width: 100%;
+    background-color: lightcoral;
+}
+.sidebarItemName{
+    height: auto;
+    width: 100%;
+    padding-left: 5px;
+}
+.sidebarItemPrice{
+    height: auto;
+    width: 100%;
+    text-align: right;
+    padding-right: 5px;
+}
+.sidebar-left{
+    float: left;
+    padding: 5px;
+    width: 50%;
+    height: fit-content;
+}
+.sidebar-right{
+    float: right;
+    padding: 5px;
+    width: 50%;
+    height: fit-content;
+}
