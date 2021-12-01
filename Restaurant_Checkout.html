@@ -110,13 +110,22 @@
     </body>
     <script>
         function payment(){
-            var check=prompt("Please enter CONFIRM in all caps to confirm your order")
-            if(check === "CONFIRM"){
+            var check=prompt("Please enter CREDIT to pay with credit, DEBIT to pay with debit, or CASH in all caps to pay with cash")
+            if(check === "CREDIT"){
+                //Typeo=credit
+                window.location.href="Receipt.html"
+            }
+            else if(check === "DEBIT"){
+                //Typeo=debit
+                window.location.href="Receipt.html"
+            }
+            else if(check === "CASH"){
+                //Typeo=cash
                 window.location.href="Receipt.html"
             }
         }
-        document.getElementbyClassName("Item").innerHTML=localStorage.getItem("Itemname")
-        document.getElementbyClassName("Item").innerHTML=localStorage.getItem("Itemprice")
+        document.getElementbyClassName("sidebarItemName").innerHTML=localStorage.getItem("ItemName")
+        document.getElementbyClassName("sidebarItemPrice").innerHTML=localStorage.getItem("ItemPrice")
 
         //function addItem(){
         //var thisitem=(Whatever the item is named)
