@@ -321,13 +321,13 @@ div.mng-stacking{
 .sidebar-left{
     float: left;
     padding: 5px;
-    width: 50%;
+    width: 75%;
     height: fit-content;
 }
 .sidebar-right{
     float: right;
     padding: 5px;
-    width: 50%;
+    width: 25%;
     height: fit-content;
 }
 .menu-content-flex{
