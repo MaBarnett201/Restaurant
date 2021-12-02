@@ -64,6 +64,13 @@
             </div>
 
             <div class=column>
+                <h3>Payment Type:</h3>
+                <div class=column style=margin:2px>
+                    <p id=ptype></p>
+                </div>
+            </div>
+
+            <div class=column>
                 <h3>Items purchased:</h3>
                 <div class=column style=margin:2px>
                     <p id=Items></p>
@@ -98,8 +105,9 @@
         </div>
     </body>
     <script>
-        document.getElementbyClassName("Item").innerHTML=localStorage.getItem("Itemname")
-        document.getElementbyClassName("Item").innerHTML=localStorage.getItem("Itemprice")
+        document.getElementbyClassName("sidebarItemName").innerHTML=localStorage.getItem("ItemName")
+        document.getElementbyClassName("sidebarItemPrice").innerHTML=localStorage.getItem("ItemPrice")
+        document.getElementbyClassName("column").innerHTML=localStorage.getItem("Typeo")
 
         //function addItem(){
         //var item=(Whatever the item is named)
@@ -132,6 +140,15 @@
         //(When item was selected from the menu){
         //var paragraph=document.getElementByID("tip");
         //var text=document.createTextNode(CTip)
+        //paragraph.appendChild(text)
+        //}
+        //}
+
+        //function addPaymenttype(){
+        //var Paytype=(Whatever the type is)
+        //(When payment type was selected){
+        //var paragraph=document.getElementByID("ptype");
+        //var text=document.createTextNode(Paytype)
         //paragraph.appendChild(text)
         //}
         //}
