@@ -1,76 +1,70 @@
-$(document).ready(function(){
-    $('.slider1').slick({
-        accessibility: true,
-        slidesToShow:3,
-        slidesToScroll:1,
-        draggable: false,
-        infinte:true,
-        prevArrow: $('.previous1'),
-        nextArrow: $('.next1'),
+let order = []
+let itemOne = 0;
+
+$(document).ready(function() {
+    $(".item").click(function(){
+        $(this).children(".item-price").children().clone().appendTo(".sidebarItemName");
+        order.push($(this).children(".item-price").children().text());
+        console.log("item added to cart");
+        console.log(order);
+        $(".sidebarItemPrice").text("\$5.00");	
+        if (itemOne === 0){  
+            cartTotalPrice();
+            itemOne++
+        }
+        else{
+            itemPrice();
+        }
     });
 });
 
-$(document).ready(function(){
-    $('.slider2').slick({
-        accessibility: true,
-        slidesToShow:3,
-        slidesToScroll:1,
-        draggable:true,
-        infinte:true,
-        prevArrow: $('.previous2'),
-        nextArrow: $('.next2'),
-    });
-});
 
-$(document).ready(function(){
-    $('.slider3').slick({
-        accessibility: true,
-        slidesToShow:3,
-        slidesToScroll:1,
-        draggable:true,
-        infinte:true,
-        prevArrow: $('.previous3'),
-        nextArrow: $('.next3'),
-    });
-});
-
-$(document).ready(function(){
-    $('.slider4').slick({
-        accessibility: true,
-        slidesToShow:3,
-        slidesToScroll:1,
-        draggable:true,
-        infinte:true,
-        prevArrow: $('.previous4'),
-        nextArrow: $('.next4'),
-    });
-});
-function toCart(){
-    // let p1 = $("<p></p>", {class:"sidebarItemName"});
-    // let p2 = $("<p></p>", {class:"sidebarItemPrice"});
-    // $(".sidebar-left").append(p1);
-    // $(".sidebar-right").append(p2);
-    let itemName= $("#test")
-    let itemPrice= $('#test2');
-    $(".sidebarItemName").append(itemName);
-    $(".sidebarItemPrice").append(itemPrice);
-    order.push(itemName);
-    console.log("item has been clicked");
-    console.log(order)
-};
-function toCart2(){
-    // let p1 = $("<p></p>", {class:"sidebarItemName"});
-    // let p2 = $("<p></p>", {class:"sidebarItemPrice"});
-    // $(".sidebar-left").append(p1);
-    // $(".sidebar-right").append(p2);
-    let itemName= $("#test3")
-    let itemPrice= $('#test4');
-    $(".sidebarItemName").append(itemName);
-    $(".sidebarItemPrice").append(itemPrice);
-    order.push(itemName);
-    console.log("item has been clicked");
-    console.log(order)
+function itemPrice(){
+    $(".sidebar-right").children("p").first().clone().prependTo(".sidebar-right");
+    return cartTotalPrice();
 };
 
-let order = [];
+function cartTotalPrice(){
+    let n = $(".sidebar-right").children("p").length;
+    $( "span" ).text(n * 5);
+    console.log("this is item <2")
+};
+
+// $(document).on("click", function() {
+//         $(".item-price").remove(this);
+//         console.log("item removed");
+// });
+
+$(document).ready(function() {
+    $('.sidebarItemName').on("click",function(e){
+        $(e.target).remove();
+        $(".sidebarItemPrice").last().remove();
+        return cartTotalPrice();
+    });
+});
+
+
+
+var newEmail = document.getElementById("email");
+var newPassword = document.getElementById("password");
+
+function store(){
+    localStorage.setItem("email", newEmail.value);
+    localStorage.setItem("password", newPassword.value);
+};
+
+function verify(){
+    var savedEmail = localStorage.getItem("email");
+    var savedPassword = localStorage.getItem("password");
+
+    var userEmail = document.getElementById("userEmail").value;
+    var userPassword = document.getElementById("userPassword").value;
+
+    if(userEmail.value !== savedEmail || userPassword.value !== savedPassword) {
+        alert("Incorrect credentials");
+    }
+    else{
+        alert("You're logged in");
+    }
+};
 

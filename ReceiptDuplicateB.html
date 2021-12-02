@@ -1,6 +1,5 @@
 <html>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link src="stylesheet" href="styleSheet.css">
     <style>
         *{
             font-family:Arial, Helvetica, sans-serif;
@@ -13,15 +12,19 @@
         }
 
         .columnmain{
-            background-color:#FFFAEF;
             width: 40%;
             margin-left: auto;
             margin-right: auto;
             display: block;
-            padding: 9px;
+            background-color:#FFFAEF;
             border-radius: 10px;
+            padding: 9px;
         }
-    
+
+        .column{
+            opacity: 1;
+        }
+
         .btn2{
             padding: 10px 30px;
             font-weight: 300;
@@ -45,93 +48,72 @@
         .totalItems{
             opacity: 1;
         }
-        
+
     </style>
     <body>
         <div class=columnmain>
-            <div class=column style="text-align:center;">
-                <h1>Dine & Dash Checkout</h1>
+            <div class=column style=text-align:center>
+                <h1>Dine & Dash Receipt</h1>
             </div>
 
-            <div class=totalItems>
-                <div class=column>
-                    <h3>Customer Name:</h3>
-                </div>
-
-                <br/>
-
-                <div class=columnmain style="width:84%;float:left;">
-                    <div class=column style="float:left;width:10px;height:10px;margin:2px;">
-                        <p style="font-size:150%;"><b>Items:</b></p>
-                    </div>
-    
-                    <div class=column style="float:right;width:10px;height:10px;margin:2px;">
-                        <p style="font-size:150%;"><b>Cost:</b></p>
-                    </div>
+            <div class=column>
+                <h3>Customer Name:</h3>
+                <div class=column style=margin:2px>
+                    <p id=cname></p>
                 </div>
             </div>
 
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            
-            <hr>
-
-            <div class=placeItems>
-                <div class=column style=width:100%;float:left>
-                    <div class=column style=float:left;margin:2px>
-                        <p id=Items></p>
-                    </div>
-
-                    <div class=column style=float:right;margin:2px>
-                        <p id=Cost></p>
-                    </div>
+            <div class=column>
+                <h3>Payment Type:</h3>
+                <div class=column style=margin:2px>
+                    <p id=ptype>Debit</p>
                 </div>
             </div>
 
-            <br/>
-            <br/>
-            <br/>
-            <br/>
+            <div class=column>
+                <h3>Items purchased:</h3>
+                <div class=column style=margin:2px>
+                    <p id=Items></p>
+                </div>
+
+                <h3>Cost:</h3>
+                <div class=column style=margin:2px>
+                    <p id=Cost></p>
+                </div>
+
+                <h3>Tip:</h3>
+                <div class=column style=margin:2px>
+                    <p id=tip></p>
+                </div>
+
+                <h3>Time Required To Complete Order:</h3>
+                <div class=column style=margin:2px>
+                    <p id=time></p>
+                </div>
+            </div>
         </div>
+        <br>
 
-        <br/>
-
-        <div class=column style=width:45%;margin-left:auto;margin-right:auto;display:block;>
-            <div class=column style=float:left;margin-left:15%>
-                <a href=Restaurant_Review.html class=btn2 style=text-decoration:none;cursor:context-menu>Back To Review</a>
+        <div class=column style="width:45%;margin-left:auto;margin-right:auto;display:block;">
+            <div class=column style="float:left;margin-left:27%;">
+                <li onclick=window.print() class=btn2 style=cursor:context-menu>Print Receipt</li>
             </div>
 
-            <div class=column style=float:right;margin-right:15%>
-                <li onclick=payment() class=btn2 style=cursor:context-menu>Confirm Checkout</li>
+            <div class=column style="float:right;margin-right:27%">
+                <a href=index.html class=btn2 style=text-decoration:none;cursor:context-menu>Log Out</a>
             </div>
         </div>
     </body>
     <script>
-        function payment(){
-            var check=prompt("Please enter CREDIT to pay with credit, DEBIT to pay with debit, or CASH in all caps to pay with cash")
-            if(check === "CREDIT"){
-                var Credtip=prompt("Please enter how much you want to tip (Just type in tip for now)")
-                if(Credtip === "tip"){
-                window.location.href="ReceiptDuplicate.html"}
-            }
-            else if(check === "DEBIT"){
-                var dtip=prompt("Please enter how much you want to tip (Just type in Tip for now)")
-                if(dtip === "Tip"){
-                window.location.href="ReceiptDuplicateB.html"}
-            }
-            else if(check === "CASH"){
-                window.location.href="Receipt.html"
-            }
-        }
         document.getElementbyClassName("item").innerHTML=localStorage.getItem("item-price")
+        document.getElementbyClassName("column").innerHTML=localStorage.getItem("check")
+        document.getElementbyClassName("column").innerHTML=localStorage.getItem("tip")
 
         //function addItem(){
-        //var thisitem=(Whatever the item is named)
+        //var item=(Whatever the item is named)
         //(When item was selected from the menu){
         //var paragraph=document.getElementByID("Items");
-        //var text=document.createTextNode(thisitem)
+        //var text=document.createTextNode(item)
         //paragraph.appendChild(text)
         //(If there is more than one item){
         //let neWp=document.createElement("p");
@@ -139,7 +121,7 @@
         //}
         //}
         //}
-
+        
         //function addCost(){
         //var cost=(Whatever the cost is)
         //(When item was selected from the menu){
@@ -150,6 +132,33 @@
         //let neWp=document.createElement("p");
         //(Give element id of Cost)
         //}
+        //}
+        //}
+        
+        //function addTip(){
+        //var CTip=(Whatever the tip is)
+        //(When item was selected from the menu){
+        //var paragraph=document.getElementByID("tip");
+        //var text=document.createTextNode(CTip)
+        //paragraph.appendChild(text)
+        //}
+        //}
+
+        //function addPaymenttype(){
+        //var Paytype=(Whatever the type is)
+        //(When payment type was selected){
+        //var paragraph=document.getElementByID("ptype");
+        //var text=document.createTextNode(Paytype)
+        //paragraph.appendChild(text)
+        //}
+        //}
+
+        //function findTime(){
+        //var CTime=(Whatever the time is)
+        //(When item was selected from the menu){
+        //var paragraph=document.getElementByID("time");
+        //var text=document.createTextNode(CTime)
+        //paragraph.appendChild(text)
         //}
         //}
 

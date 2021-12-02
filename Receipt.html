@@ -64,6 +64,13 @@
             </div>
 
             <div class=column>
+                <h3>Payment Type:</h3>
+                <div class=column style=margin:2px>
+                    <p id=ptype>Cash</p>
+                </div>
+            </div>
+
+            <div class=column>
                 <h3>Items purchased:</h3>
                 <div class=column style=margin:2px>
                     <p id=Items></p>
@@ -76,7 +83,7 @@
 
                 <h3>Tip:</h3>
                 <div class=column style=margin:2px>
-                    <p id=tip></p>
+                    <p id=tip>N/A</p>
                 </div>
 
                 <h3>Time Required To Complete Order:</h3>
@@ -98,8 +105,8 @@
         </div>
     </body>
     <script>
-        document.getElementbyClassName("Item").innerHTML=localStorage.getItem("Itemname")
-        document.getElementbyClassName("Item").innerHTML=localStorage.getItem("Itemprice")
+        document.getElementbyClassName("item").innerHTML=localStorage.getItem("item-price")
+        document.getElementbyClassName("column").innerHTML=localStorage.getItem("check")
 
         //function addItem(){
         //var item=(Whatever the item is named)
@@ -127,11 +134,11 @@
         //}
         //}
         
-        //function addTip(){
-        //var CTip=(Whatever the tip is)
-        //(When item was selected from the menu){
-        //var paragraph=document.getElementByID("tip");
-        //var text=document.createTextNode(CTip)
+        //function addPaymenttype(){
+        //var Paytype=(Whatever the type is)
+        //(When payment type was selected){
+        //var paragraph=document.getElementByID("ptype");
+        //var text=document.createTextNode(Paytype)
         //paragraph.appendChild(text)
         //}
         //}
