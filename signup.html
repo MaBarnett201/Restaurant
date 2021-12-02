@@ -4,7 +4,6 @@
             Dine & Dash - Sign-up
         </title>
         <link rel="stylesheet" href="styleSheet.css">
-        <script src="index.js"></script>
     </head>
     <body>
         <section class="login">
@@ -21,10 +20,20 @@
                         <input type="text" id="password" value="Password" required><br>
                         <label for="password-con">Confirm Password</label><br>
                         <input type="text" id="password-con" value="Password" required><br>
-                        <input type="submit" value="Sign Up!">
+                        <input type="submit" value="Sign Up!" onclick="store();">
                     </form>
                 </div>
             </div>
         </section>
+        <script>
+            var newEmail = document.getElementById("email");
+            var newPassword = document.getElementById("password");
+
+            function store(){
+                localStorage.setItem("email", newEmail.value);
+                localStorage.setItem("password", newPassword.value);
+            };
+
+        </script>
     </body>
 </html>

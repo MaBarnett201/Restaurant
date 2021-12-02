@@ -73,3 +73,26 @@ function toCart2(){
 };
 
 let order = [];
+
+var newEmail = document.getElementById("email");
+var newPassword = document.getElementById("password");
+
+function store(){
+    localStorage.setItem("email", newEmail.value);
+    localStorage.setItem("password", newPassword.value);
+};
+
+function verify(){
+    var savedEmail = localStorage.getItem("email");
+    var savedPassword = localStorage.getItem("password");
+
+    var userEmail = document.getElementById("userEmail").value;
+    var userPassword = document.getElementById("userPassword").value;
+
+    if(userEmail.value !== savedEmail || userPassword.value !== savedPassword) {
+        alert("Incorrect credentials");
+    }
+    else{
+        alert("You're logged in");
+    }
+};
