@@ -29,10 +29,21 @@ function cartTotalPrice(){
     $( "span" ).text(n * 5);
     console.log("this is item <2")
 };
-$(".sidebar-right").on("click", function() {
-        $(".sidebar-right").children().remove(this);
-        console.log("item removed");
+
+// $(document).on("click", function() {
+//         $(".item-price").remove(this);
+//         console.log("item removed");
+// });
+
+$(document).ready(function() {
+    $('.sidebarItemName').on("click",function(e){
+        $(e.target).remove();
+        $(".sidebarItemPrice").last().remove();
+        return cartTotalPrice();
     });
+});
+
+
 
 var newEmail = document.getElementById("email");
 var newPassword = document.getElementById("password");
