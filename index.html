@@ -4,7 +4,6 @@
             Dine & Dash - Log-in
         </title>
         <link rel="stylesheet" href="styleSheet.css">
-        <script src="index.js"></script>
     </head>
     <body>
         <section class="login">
@@ -14,14 +13,31 @@
                     <h3 class="log-in">Log In</h3>
                     <form>
                         <label for="email">E-mail</label><br>
-                        <input type="text" id="email" value="E-mail Address"><br>
+                        <input type="text" id="userEmail" value="E-mail Address"><br>
                         <label for="password">Password</label><br>
-                        <input type="text" id="password" value="Password"><br>
-                        <input type="submit" value="Log In!">
+                        <input type="text" id="userPassword" value="Password"><br>
+                        <input type="submit" value="Log In!" onclick="verify()">
                     </form>
                     <h5 class="signup">Don't have an account? <a href="signup.html" class="signup">Sign Up!</a></h5>
                 </div>
             </div>
         </section>
+
+        <script>
+            function verify(){
+                var savedEmail = localStorage.getItem("email");
+                var savedPassword = localStorage.getItem("password");
+
+                var userEmail = document.getElementById("userEmail").value;
+                var userPassword = document.getElementById("userPassword").value;
+
+                if(userEmail.value !== savedEmail || userPassword.value !== savedPassword) {
+                    alert("Incorrect credentials");
+                }
+                else{
+                    alert("You're logged in");
+                }
+            };
+        </script>
     </body>
 </html>
