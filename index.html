@@ -9,14 +9,14 @@
         <section class="login">
             <div class="curve">
                 <div class="login-fields">
-                    <h1 class="dine">Dine & Dash</h1>
+                    <h1 class="login-dine">Dine & Dash</h1>
                     <h3 class="log-in">Log In</h3>
                     <form>
                         <label for="email">E-mail</label><br>
-                        <input type="text" id="userEmail" value="E-mail Address"><br>
+                        <input type="text" id="userEmail"><br>
                         <label for="password">Password</label><br>
-                        <input type="text" id="userPassword" value="Password"><br>
-                        <input type="submit" value="Log In!" onclick="verify()">
+                        <input type="text" id="userPassword"><br>
+                        <button type="button" onclick="verify()">Log in!</button>
                     </form>
                     <h5 class="signup">Don't have an account? <a href="signup.html" class="signup">Sign Up!</a></h5>
                 </div>
@@ -24,18 +24,17 @@
         </section>
 
         <script>
+
             function verify(){
-                var savedEmail = localStorage.getItem("email");
-                var savedPassword = localStorage.getItem("password");
+                var savedUser = JSON.parse(localStorage.getItem("user"));
+                var enteredEmail = document.getElementById("userEmail").value;
+                var enteredPass = document.getElementById("userPassword").value;
 
-                var userEmail = document.getElementById("userEmail").value;
-                var userPassword = document.getElementById("userPassword").value;
-
-                if(userEmail.value !== savedEmail || userPassword.value !== savedPassword) {
-                    alert("Incorrect credentials");
+                if (enteredEmail === savedUser.email && enteredPass === savedUser.password) {
+                    console.log("You are logged in");
                 }
                 else{
-                    alert("You're logged in");
+                    console.log("Incorrect credentials");
                 }
             };
         </script>
