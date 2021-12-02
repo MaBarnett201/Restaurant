@@ -66,7 +66,7 @@
             <div class=column>
                 <h3>Payment Type:</h3>
                 <div class=column style=margin:2px>
-                    <p id=ptype></p>
+                    <p id=ptype>Cash</p>
                 </div>
             </div>
 
@@ -83,7 +83,7 @@
 
                 <h3>Tip:</h3>
                 <div class=column style=margin:2px>
-                    <p id=tip></p>
+                    <p id=tip>N/A</p>
                 </div>
 
                 <h3>Time Required To Complete Order:</h3>
@@ -105,9 +105,8 @@
         </div>
     </body>
     <script>
-        document.getElementbyClassName("sidebarItemName").innerHTML=localStorage.getItem("ItemName")
-        document.getElementbyClassName("sidebarItemPrice").innerHTML=localStorage.getItem("ItemPrice")
-        document.getElementbyClassName("column").innerHTML=localStorage.getItem("Typeo")
+        document.getElementbyClassName("item").innerHTML=localStorage.getItem("item-price")
+        document.getElementbyClassName("column").innerHTML=localStorage.getItem("check")
 
         //function addItem(){
         //var item=(Whatever the item is named)
@@ -135,15 +134,6 @@
         //}
         //}
         
-        //function addTip(){
-        //var CTip=(Whatever the tip is)
-        //(When item was selected from the menu){
-        //var paragraph=document.getElementByID("tip");
-        //var text=document.createTextNode(CTip)
-        //paragraph.appendChild(text)
-        //}
-        //}
-
         //function addPaymenttype(){
         //var Paytype=(Whatever the type is)
         //(When payment type was selected){
