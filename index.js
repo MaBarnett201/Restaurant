@@ -1,4 +1,4 @@
-let order = []
+let order = [];
 let itemOne = 0;
 
 $(document).ready(function() {
@@ -30,18 +30,21 @@ function cartTotalPrice(){
     console.log("this is item <2")
 };
 
-// $(document).on("click", function() {
-//         $(".item-price").remove(this);
-//         console.log("item removed");
-// });
-
 $(document).ready(function() {
     $('.sidebarItemName').on("click",function(e){
         $(e.target).remove();
         $(".sidebarItemPrice").last().remove();
+        let x = order.indexOf(e.target,0);
+        order.splice(x,1);
+        console.log(order);
         return cartTotalPrice();
     });
 });
+
+function orderSave(){
+    let stringOrder = order.toString();
+    localStorage.setItem('order', 'stringOrder')
+};
 
 
 

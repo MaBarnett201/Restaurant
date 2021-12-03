@@ -133,6 +133,14 @@ a.signup{
 a.signup:hover{
     text-decoration: underline;
 }
+a.checkoutButton{
+    text-decoration: none;
+    color: #FFFAEF;
+}
+
+a.checkoutButton:hover{
+    text-decoration: none;
+}
 
 
 /* div.colors{
@@ -279,11 +287,6 @@ div.mng-stacking{
     color: #B32C06;
     --ionicon-stroke-width: 20px;
 }
-/* 
-.slider-flex{
-    display: flex;
-    height: 1350px;
-} */
 
 .slider-flex-left{
     height: 100%;
@@ -291,12 +294,12 @@ div.mng-stacking{
 }
 
 .slider-flex-right{
-    height: 500px;
-    width: 24%;
+    height: 400px;
+    width: 100%;
     border: 2px solid gray;
     background-color: white;
     /* margin-right: 40px; */
-    margin-top: 36px;
+    margin-top: 10px;
 
 }
 .wrapper {
@@ -373,4 +376,30 @@ div.mng-stacking{
 }
 .spanPrice{
     border: 0 0 2px 0 solid gray;
+}
+.userInfo{
+    height: 150px;
+    width: 100%;
+    border: 2px solid gray;
+    background-color: white;
+    /* margin-right: 40px; */
+    margin-top: 36px;
+    margin-bottom: 10px;
+}
+.sidebarContainer{
+    width: 24%;
+    height: fit-content;
+}
+.userInfo p{
+    padding: 3%;
+}
+.checkoutBtn{
+    font-size: 20pt;
+    padding: 2%;
+    border-style: none;
+    border-radius: 10px;
+    color: #FFFAEF;
+    background-color: #B32C06;
+    width: 70%;
+    margin: 0 40px;
 }
