@@ -125,8 +125,14 @@
                 window.location.href="Receipt.html"
             }
         }
-        document.getElementbyClassName("item").innerHTML=localStorage.getItem("item-price")
+        var price=document.getElementbyClassName("item").innerHTML=localStorage.getItem("item-price")
+        var text=document.getElementbyClassName("item").innerHTML=localStorage.getItem("item-text")
 
+        function saveTipCredit(){
+        let Tipcred=Credtip.toString()
+        localStorage.setItem("tip", Tipcred)
+        }
+        
         //function addItem(){
         //var thisitem=(Whatever the item is named)
         //(When item was selected from the menu){

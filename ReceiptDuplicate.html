@@ -50,7 +50,7 @@
         }
 
     </style>
-    <body>
+    <body onload=addTip()>
         <div class=columnmain>
             <div class=column style=text-align:center>
                 <h1>Dine & Dash Receipt</h1>
@@ -82,7 +82,7 @@
                 </div>
 
                 <h3>Tip:</h3>
-                <div class=column style=margin:2px>
+                <div id=tippy class=column style=margin:2px>
                     <p id=tip></p>
                 </div>
 
@@ -105,9 +105,18 @@
         </div>
     </body>
     <script>
-        document.getElementbyClassName("item").innerHTML=localStorage.getItem("item-price")
-        innerHTML=localStorage.getItem("check")
-        innerHTML=localStorage.getItem("Credtip")
+        var price=localStorage.getItem("item-price")
+        var text=localStorage.getItem("item-text")
+        var checc=localStorage.getItem("check")
+        var CreditTip=localStorage.getItem("Credtip")
+
+        function addTip(){
+        var savedTip=JSON.parse(localStorage.getItem("tip"));
+        var Tipsaved=Credtip
+        document.getElementById("tip").innerHTML +=
+        savedTip
+        console.log("Working")
+        }
 
         //function addItem(){
         //var item=(Whatever the item is named)
@@ -132,22 +141,6 @@
         //let neWp=document.createElement("p");
         //(Give element id of Cost)
         //}
-        //}
-        //}
-        
-        function addTip(){
-        var CTip=(Credtip)
-        document.getElementByID("tip");
-        var text=document.createTextNode(CTip)
-        paragraph.appendChild(text)
-        }
-
-        //function addPaymenttype(){
-        //var Paytype=(Whatever the type is)
-        //(When payment type was selected){
-        //var paragraph=document.getElementByID("ptype");
-        //var text=document.createTextNode(Paytype)
-        //paragraph.appendChild(text)
         //}
         //}
 

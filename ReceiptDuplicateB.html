@@ -105,9 +105,10 @@
         </div>
     </body>
     <script>
-        document.getElementbyClassName("item").innerHTML=localStorage.getItem("item-price")
-        document.getElementbyClassName("column").innerHTML=localStorage.getItem("check")
-        document.getElementbyClassName("column").innerHTML=localStorage.getItem("tip")
+        var price=document.getElementbyClassName("item").innerHTML=localStorage.getItem("item-price")
+        var text=document.getElementbyClassName("item").innerHTML=localStorage.getItem("item-text")
+        var checc=document.getElementbyClassName("column").innerHTML=localStorage.getItem("check")
+        var DebitTip=document.getElementbyClassName("column").innerHTML=localStorage.getItem("tip")
 
         //function addItem(){
         //var item=(Whatever the item is named)
@@ -140,15 +141,6 @@
         //(When item was selected from the menu){
         //var paragraph=document.getElementByID("tip");
         //var text=document.createTextNode(CTip)
-        //paragraph.appendChild(text)
-        //}
-        //}
-
-        //function addPaymenttype(){
-        //var Paytype=(Whatever the type is)
-        //(When payment type was selected){
-        //var paragraph=document.getElementByID("ptype");
-        //var text=document.createTextNode(Paytype)
         //paragraph.appendChild(text)
         //}
         //}
