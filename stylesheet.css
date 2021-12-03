@@ -163,7 +163,19 @@ a.checkoutButton:hover{
     background-color: white;
     margin-bottom: 10px;
 }
+.item2{
+    border: 2px solid gray;
+    height: 270px;
+    width: 200px;
+    margin: 0 2px;
+    background-color: white;
+    margin-bottom: 10px;
+}
 .item img{
+    height: 150px;
+    width: 100%;
+}
+.item2 img{
     height: 150px;
     width: 100%;
 }
@@ -398,6 +410,10 @@ h4#welcomeUser{
 .sidebarContainer{
     width: 24%;
     height: fit-content;
+    border: 2px solid gray;
+    height: 500px;
+    background-color: white;
+    margin-top: 35px;
 }
 .userInfo p{
     padding: 3%;

@@ -46,7 +46,12 @@ function orderSave(){
     localStorage.setItem('order', stringOrder);
 };
 
+$(document).ready(function() {
+    $('.item2').on("click",function(e){
+        $(this).empty().children();
 
+    });
+});
 
 function register() {
     var newName = document.getElementById("name").value;
@@ -82,3 +87,4 @@ function displayName() {
     document.getElementById("welcomeUser").innerHTML +=
     "Welcome, " + custName;
 }
+

@@ -1,0 +1,184 @@
+<html>
+    <head>
+        <title>
+            Menu
+        </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="styleSheet.css">
+        <script src="index.js"></script>
+        <!-- <link rel="stylesheet" type="text/css" href="slick-1.8.1\slick-1.8.1\slick\slick.css"/>
+        <link rel="stylesheet" type="text/css" href="slick-1.8.1\slick-1.8.1\slick\slick-theme.css"/> -->
+     </head>
+    <body class="background" onload="displayName()">
+        <div class="apps">
+        <header class="header">
+            <h1>Dine & Dash Manager Menu</h1>
+            <h4 id="welcomeUser"></h4>
+        </header>
+        <section class="menu-content-flex">
+            <div class="menu-container">
+                <h3 class="titles">Appetizers</h3>
+                <hr class="line">
+            <article class="menu-flex">
+                <div class="item">
+                    <img src="images/chicken fingers.jpg">
+                    <div class="item-price">
+                        <p  class="item-text"id="test">Chicken Fingers</p>
+                    </div>
+                    <p class="item-desc"><em>5 deep fried chicken breasts, breaded in our signature mix.</em></p>
+                </div>
+                <div class="item2">
+                    <img src="images/eggrolls.jpg">
+                    <div class="item-price">
+                        <p  class="item-text"id="test3">Cheesesteak Eggrolls</p>
+                    </div>
+                    <p class="item-desc"><em>Rib eye steak, onions, peppers and provolone cheese, all wrapped up and fried to crispy perfection.</em></p>
+                </div>
+                <div  class="item2">
+                    <img src="images/finger-sandwiches.jpg">
+                    <div class="item-price">
+                        <p class="item-text">Chicken Sandwiches</p>
+                    </div>
+                    <p class="item-desc"><em>4 finger sandwiches with, breaded chicken pattie, lettuce, tomato white bread, with a light aioli sauce.</em></p>
+                </div>
+                <div class="item2">
+                    <img src="images/freshcut-pre-cut-vegetables.jpg">
+                    <div class="item-price">
+                        <p class="item-text">Raw Vegetables</p>
+                    </div>
+                    <p class="item-desc"><em>A mix of fresh raw vegetables. Carrots, celery, and broccoli.</em></p>
+                </div>
+                <div  class="item2">
+                    <img src="images/fried-pickles.jpg">
+                    <div class="item-price">
+                        <p class="item-text">Fried Pickles</p>
+                    </div>
+                    <p class="item-desc"><em>Crispy deep fried pickles, served with our famous spicy dipping sauce.</em></p>
+                </div>
+            </article>
+                <h3 class="titles">Entrees</h3>
+                <hr class="line">
+            <article class="menu-flex">
+                <div class="item2">
+                    <img src="images/burger.jpg">
+                    <div class="item-price">
+                        <p>Angus Burger</p>
+                    </div>
+                    <p class="item-desc"><em>Flame grilled angus burger pattie, topped with lettuce, onion, pickles, american cheese. All on a fresh baked sesame bun.</em></p>
+                </div>
+                <div class="item2">
+                    <img src="images/carne_asada.jpg">
+                    <div class="item-price">
+                        <p>Carne Asada Tacos</p>
+                    </div>
+                    <p class="item-desc"><em>Juicy grilled steak packed into warm corn tortillas and topped with tangy fresh tomato salsa and a drizzle of sour-cream and lime.</em></p>
+                </div>
+                <div class="item2">
+                    <img src="images/chicken-penne.jpg">
+                    <div class="item-price">
+                        <p>Penne Vodka Pasta</p>
+                    </div>
+                    <p class="item-desc"><em>Tender grilled chicken and penne pasta tossed in a rich and delicious tomato, vodka and cream sauce, all topped with parmesan cheese.</em></p>
+                </div>
+                <div class="item2">
+                    <img src="images/chicken-marsala.jpg">
+                    <div class="item-price">
+                        <p>Chicken Marsala</p>
+                    </div>
+                    <p class="item-desc"><em>golden pan-fried chicken cutlets and fresh locally-sourced mushrooms in a rich Marsala wine sauce.</em></p>
+                </div>
+                <div class="item2">
+                    <img src="images/pizza.jpg">
+                    <div class="item-price">
+                        <p>NY style pizza</p>
+                    </div>
+                    <p class="item-desc"><em>Large NY style pizza, with a thin foldable crust, homemade pizza sauce and topped with fresh mozzarella.</em></p>
+                </div>
+            </article>
+                <h3 class="titles">Dessert</h3>
+                <hr class="line">
+            <article class="menu-flex">
+                <div class="item2">
+                    <img src="images/dark-chocolate.jpg">
+                    <div class="item-price">
+                        <p>Dark Chocolate Cake</p>
+                    </div>
+                    <p class="item-desc"><em>Super moist dark chocolate mousse cake. Filled with chocolate mousse and covered with semi-sweet chocolate ganache.</em></p>
+                </div>
+                <div class="item2">
+                    <img src="images/Apple-Crumb-Pie.jpg">
+                    <div class="item-price">
+                        <p>Apple Crumb Pie</p>
+                    </div>
+                    <p class="item-desc"><em>An American classic. Warm gooey center, with a flaky crust and cinimon crumble top. Served with one scoop vanilla ice cream.</em></p>
+                </div>
+                <div class="item2">
+                    <img src="images/cake-pop.jpg">
+                    <div class="item-price">
+                        <p>Cake Pop</p>
+                    </div>
+                    <p class="item-desc"><em>1 dozen assorted cake pops. Smooth icing outside and creamy cake interior.</em></p>
+                </div>
+                <div class="item2">
+                    <img src="images/eggless-cheesecake-fb-1.jpg">
+                    <div class="item-price">
+                        <p>Cheesecake</p>
+                    </div>
+                    <p class="item-desc"><em>Classic cheesecake that is creamy, silky, and smooth.</em></p>
+                </div>
+                <div class="item2">
+                    <img src="images/Fried-churros.jpg">
+                    <div class="item-price">
+                        <p>Churros</p>
+                    </div>
+                    <p class="item-desc"><em>Large shareable plate of fried churros. Generously coated with sugar and served with a melted chocolate sauce.</em></p>
+                </div>
+            </article>
+                <h3 class="titles">Sides</h3>
+                <hr class="line">
+            <article class="menu-flex">
+                <div class="item2">
+                    <img src="images/chips.jpg">
+                    <div class="item-price">
+                        <p>Potato Chips</p>
+                    </div>
+                    <p class="item-desc"><em>Homemade potato chips, fried in lard. Lightly salted with course salt.</em></p>
+                </div>
+                <div class="item2">
+                    <img src="images/french fries.jpg">
+                    <div class="item-price">
+                        <p>French Fries</p>
+                    </div>
+                    <p class="item-desc"><em>Classic cut french fries, deep fried to golden perfection.</em></p>
+                </div>
+                <div class="item2">
+                    <img src="images/fruit.jpg">
+                    <div class="item-price">
+                        <p>Fruit</p>
+                    </div>
+                    <p class="item-desc"><em>Assorted fresh cut fruit.</em></p>
+                </div>
+                <div class="item2">
+                    <img src="images/Mozzarella-Sticks.jpg">
+                    <div class="item-price">
+                        <p>Mozzarella Sticks</p>
+                    </div>
+                    <p class="item-desc"><em>Fresh mozzarella deep fried. Crispy outside and a pull apart melted inside.</em></p>
+                </div>
+                <div class="item2">
+                    <img src="images/menu-house-salad-1103.jpg">
+                    <div class="item-price">
+                        <p>House Salad</p>
+                    </div>
+                    <p class="item-desc"><em>House salad with lettuce, spinach, tomato, cucumber, onion, celery and your choice of dressing.</em></p>
+                </div>
+            </article>
+            </div>
+            <div class="sidebarContainer sidebar">
+                
+            </div>
+        </section>
+        </div>
+        <!-- <script type="text/javascript" src="slick-1.8.1\slick-1.8.1\slick\slick.min.js"></script>
+    </body> -->
+</html>
