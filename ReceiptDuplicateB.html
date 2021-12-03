@@ -1,5 +1,6 @@
 <html>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="index.js"></script>
     <style>
         *{
             font-family:Arial, Helvetica, sans-serif;
@@ -50,7 +51,7 @@
         }
 
     </style>
-    <body>
+    <body onload="addTipB()">
         <div class=columnmain>
             <div class=column style=text-align:center>
                 <h1>Dine & Dash Receipt</h1>
@@ -82,7 +83,7 @@
                 </div>
 
                 <h3>Tip:</h3>
-                <div class=column style=margin:2px>
+                <div id=tippy class=column style=margin:2px>
                     <p id=tip></p>
                 </div>
 
@@ -105,10 +106,6 @@
         </div>
     </body>
     <script>
-        var price=document.getElementbyClassName("item").innerHTML=localStorage.getItem("item-price")
-        var text=document.getElementbyClassName("item").innerHTML=localStorage.getItem("item-text")
-        var checc=document.getElementbyClassName("column").innerHTML=localStorage.getItem("check")
-        var DebitTip=document.getElementbyClassName("column").innerHTML=localStorage.getItem("tip")
 
         //function addItem(){
         //var item=(Whatever the item is named)

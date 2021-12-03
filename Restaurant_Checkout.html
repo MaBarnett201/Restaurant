@@ -1,6 +1,7 @@
 <html>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link src="stylesheet" href="styleSheet.css">
+    <script src="index.js"></script>
     <style>
         *{
             font-family:Arial, Helvetica, sans-serif;
@@ -94,6 +95,22 @@
             <br/>
             <br/>
             <br/>
+            <form method="post" action="Receipt.html">
+                <label for="tip">Pay with Cash</label><br>
+                <button type="submit" onclick="saveTipCredit()">Pay</button>
+            </form>
+            <form method="post" action="ReceiptDuplicate.html">
+                <label for="tip">Pay with Credit</label><br><br>
+                <label for="tip">Tip</label><br>
+                <input type="text" id="Taratip" required><br>
+                <button type="submit" onclick="saveTipCredit()">Pay</button>
+            </form>
+            <form method="post" action="ReceiptDuplicateB.html">
+                <label for="tip">Pay with Debit</label><br><br>
+                <label for="tip">Tip</label><br>
+                <input type="text" id="TaratipB" required><br>
+                <button type="submit" onclick="saveTipDebit()">Pay</button>
+            </form>
         </div>
 
         <br/>
@@ -104,7 +121,7 @@
             </div>
 
             <div class=column style=float:right;margin-right:15%>
-                <li onclick=payment() class=btn2 style=cursor:context-menu>Confirm Checkout</li>
+                <li onclick=payment() class=btn2 style=cursor:context-menu id=tipcredit>Don't use this button will remove soon</li>
             </div>
         </div>
     </body>
@@ -114,7 +131,9 @@
             if(check === "CREDIT"){
                 var Credtip=prompt("Please enter how much you want to tip (Just type in tip for now)")
                 if(Credtip === "tip"){
-                window.location.href="ReceiptDuplicate.html"}
+                window.location.href="ReceiptDuplicate.html"
+                saveTipCredit()
+            }
             }
             else if(check === "DEBIT"){
                 var dtip=prompt("Please enter how much you want to tip (Just type in Tip for now)")
@@ -124,13 +143,6 @@
             else if(check === "CASH"){
                 window.location.href="Receipt.html"
             }
-        }
-        var price=document.getElementbyClassName("item").innerHTML=localStorage.getItem("item-price")
-        var text=document.getElementbyClassName("item").innerHTML=localStorage.getItem("item-text")
-
-        function saveTipCredit(){
-        let Tipcred=Credtip.toString()
-        localStorage.setItem("tip", Tipcred)
         }
         
         //function addItem(){

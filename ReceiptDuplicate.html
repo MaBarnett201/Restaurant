@@ -1,5 +1,6 @@
 <html>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="index.js"></script>
     <style>
         *{
             font-family:Arial, Helvetica, sans-serif;
@@ -50,7 +51,7 @@
         }
 
     </style>
-    <body onload=addTip()>
+    <body onload="addTip()">
         <div class=columnmain>
             <div class=column style=text-align:center>
                 <h1>Dine & Dash Receipt</h1>
@@ -105,18 +106,6 @@
         </div>
     </body>
     <script>
-        var price=localStorage.getItem("item-price")
-        var text=localStorage.getItem("item-text")
-        var checc=localStorage.getItem("check")
-        var CreditTip=localStorage.getItem("Credtip")
-
-        function addTip(){
-        var savedTip=JSON.parse(localStorage.getItem("tip"));
-        var Tipsaved=Credtip
-        document.getElementById("tip").innerHTML +=
-        savedTip
-        console.log("Working")
-        }
 
         //function addItem(){
         //var item=(Whatever the item is named)
