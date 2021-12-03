@@ -45,26 +45,37 @@ $(document).ready(function() {
 
 
 
-var newEmail = document.getElementById("email");
-var newPassword = document.getElementById("password");
+function register() {
+    var newName = document.getElementById("name").value;
+    var newEmail = document.getElementById("email").value;
+    var newPassword = document.getElementById("password").value;
 
-function store(){
-    localStorage.setItem("email", newEmail.value);
-    localStorage.setItem("password", newPassword.value);
-};
+    var user = {
+        username: newName,
+        email: newEmail,
+        password: newPassword,
+    }
+
+    var storedUser = JSON.stringify(user);
+    localStorage.setItem("user", storedUser);
+}
 
 function verify(){
-    var savedEmail = localStorage.getItem("email");
-    var savedPassword = localStorage.getItem("password");
+    var savedUser = JSON.parse(localStorage.getItem("user"));
+    var enteredEmail = document.getElementById("userEmail").value;
+    var enteredPass = document.getElementById("userPassword").value;
 
-    var userEmail = document.getElementById("userEmail").value;
-    var userPassword = document.getElementById("userPassword").value;
-
-    if(userEmail.value !== savedEmail || userPassword.value !== savedPassword) {
-        alert("Incorrect credentials");
+    if (enteredEmail === savedUser.email && enteredPass === savedUser.password) {
+        displayName();
     }
     else{
-        alert("You're logged in");
+        console.log("Incorrect credentials");
     }
 };
 
+function displayName() {
+    var custInfo = JSON.parse(localStorage.getItem("user"));
+    var custName = custInfo.username;
+    document.getElementById("welcomeUser").innerHTML +=
+    "Welcome, " + custName;
+}

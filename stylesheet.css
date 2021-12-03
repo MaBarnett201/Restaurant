@@ -119,7 +119,7 @@ button:hover{
 }
 
 h5.signup{
-    padding-top: 10%;
+    padding-top: 5%;
     padding-left: 2%;
     font-size: 12pt;
     margin-left: 10%;
@@ -133,7 +133,6 @@ a.signup{
 a.signup:hover{
     text-decoration: underline;
 }
-
 
 /* div.colors{
     color: #DAD6CA;
@@ -284,6 +283,16 @@ div.mng-stacking{
     display: flex;
     height: 1350px;
 } */
+
+header.header{
+    display: flex;
+    flex-direction: column;
+}
+
+h4#welcomeUser{
+    display: flex;
+    padding-top: 2%;
+}
 
 .slider-flex-left{
     height: 100%;
