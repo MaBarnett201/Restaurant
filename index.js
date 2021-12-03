@@ -43,7 +43,7 @@ $(document).ready(function() {
 
 function orderSave(){
     let stringOrder = order.toString();
-    localStorage.setItem('order', 'stringOrder')
+    localStorage.setItem('order', stringOrder);
 };
 
 
