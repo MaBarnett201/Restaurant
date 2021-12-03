@@ -119,7 +119,7 @@ button:hover{
 }
 
 h5.signup{
-    padding-top: 10%;
+    padding-top: 5%;
     padding-left: 2%;
     font-size: 12pt;
     margin-left: 10%;
@@ -141,7 +141,6 @@ a.checkoutButton{
 a.checkoutButton:hover{
     text-decoration: none;
 }
-
 
 /* div.colors{
     color: #DAD6CA;
@@ -286,6 +285,16 @@ div.mng-stacking{
     padding: 3% 0 0 0;
     color: #B32C06;
     --ionicon-stroke-width: 20px;
+}
+
+header.header{
+    display: flex;
+    flex-direction: column;
+}
+
+h4#welcomeUser{
+    display: flex;
+    padding-top: 2%;
 }
 
 .slider-flex-left{

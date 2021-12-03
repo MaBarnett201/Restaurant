@@ -31,10 +31,10 @@
                 var enteredPass = document.getElementById("userPassword").value;
 
                 if (enteredEmail === savedUser.email && enteredPass === savedUser.password) {
-                    console.log("You are logged in");
+                    document.location.href = "menu.html";
                 }
                 else{
-                    console.log("Incorrect credentials");
+                    alert("Incorrect credentials");
                 }
             };
         </script>
