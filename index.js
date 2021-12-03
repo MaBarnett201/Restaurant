@@ -46,12 +46,7 @@ function orderSave(){
     localStorage.setItem('order', stringOrder);
 };
 
-$(document).ready(function() {
-    $('.item2').on("click",function(e){
-        $(this).empty().children();
 
-    });
-});
 
 function register() {
     var newName = document.getElementById("name").value;
@@ -88,3 +83,31 @@ function displayName() {
     "Welcome, " + custName;
 }
 
+function saveTipCredit(){
+    var NewTip=document.getElementById("Taratip").value;
+    var GTip={YourTip: NewTip}
+    var StoredTip=JSON.stringify(GTip)
+    localStorage.setItem("tip", StoredTip)
+    }
+
+    function saveTipDebit(){
+        var NewTip=document.getElementById("TaratipB").value;
+        var GTip={YourTip: NewTip}
+        var StoredTip=JSON.stringify(GTip)
+        localStorage.setItem("tip", StoredTip)
+        }
+
+    function addTip(){
+        var tipInfo=JSON.parse(localStorage.getItem("tip"))
+        var tipName=tipInfo.YourTip;
+        document.getElementById("tip").innerHTML +=
+        tipName
+        console.log("Working")
+        }
+        function addTipB(){
+            var tipInfo=JSON.parse(localStorage.getItem("tip"))
+            var tipName=tipInfo.YourTip;
+            document.getElementById("tip").innerHTML +=
+            tipName
+            console.log("Working")
+            }
