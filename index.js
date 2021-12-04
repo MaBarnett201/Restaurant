@@ -84,14 +84,14 @@ function displayName() {
 }
 
 function saveTipCredit(){
-    var NewTip=document.getElementById("Taratip").value;
+    var NewTip=document.getElementById("CRtip").value;
     var GTip={YourTip: NewTip}
     var StoredTip=JSON.stringify(GTip)
     localStorage.setItem("tip", StoredTip)
     }
 
     function saveTipDebit(){
-        var NewTip=document.getElementById("TaratipB").value;
+        var NewTip=document.getElementById("DEtipB").value;
         var GTip={YourTip: NewTip}
         var StoredTip=JSON.stringify(GTip)
         localStorage.setItem("tip", StoredTip)
@@ -102,7 +102,6 @@ function saveTipCredit(){
         var tipName=tipInfo.YourTip;
         document.getElementById("tip").innerHTML +=
         tipName
-        console.log("Working")
         }
         function addTipB(){
             var tipInfo=JSON.parse(localStorage.getItem("tip"))
@@ -111,3 +110,13 @@ function saveTipCredit(){
             tipName
             console.log("Working")
             }
+
+    function onloadTest(){
+        if(isNaN(document.getElementById("tip").innerHTML)){
+            window.location.href="Restaurant_Checkout.html"
+            alert("Please enter a number")
+        }
+        else{
+            console.log("yes")
+        }
+    }
