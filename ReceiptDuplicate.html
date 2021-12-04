@@ -49,16 +49,18 @@
         .totalItems{
             opacity: 1;
         }
-
+        .next{
+            display:inline-block
+        }
     </style>
-    <body onload="addTip()">
+    <body onload="addTip(); onloadTest()">
         <div class=columnmain>
             <div class=column style=text-align:center>
                 <h1>Dine & Dash Receipt</h1>
             </div>
 
             <div class=column>
-                <h3>Customer Name:</h3>
+                <h3 id="testy">Customer Name:</h3>
                 <div class=column style=margin:2px>
                     <p id=cname></p>
                 </div>
@@ -84,7 +86,8 @@
 
                 <h3>Tip:</h3>
                 <div id=tippy class=column style=margin:2px>
-                    <p id=tip></p>
+                    <p class=next>$</p>
+                    <p id=tip class=next></p>
                 </div>
 
                 <h3>Time Required To Complete Order:</h3>

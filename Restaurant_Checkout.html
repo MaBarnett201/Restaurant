@@ -96,20 +96,20 @@
             <br/>
             <br/>
             <form method="post" action="Receipt.html">
-                <label for="tip">Pay with Cash</label><br>
-                <button type="submit" onclick="saveTipCredit()">Pay</button>
+                <label for="tip"><b>Pay with Cash</b></label><br>
+                <button type="submit" class="btn2">Pay</button>
             </form>
             <form method="post" action="ReceiptDuplicate.html">
-                <label for="tip">Pay with Credit</label><br><br>
-                <label for="tip">Tip</label><br>
-                <input type="text" id="Taratip" required><br>
-                <button type="submit" onclick="saveTipCredit()">Pay</button>
+                <label for="tip"><b>Pay with Credit</b></label><br><br>
+                <label for="tip"><b>Tip</b></label><br>
+                <input type="text" id="CRtip" required><br>
+                <button type="submit" onclick="saveTipCredit()" class="btn2">Pay</button>
             </form>
             <form method="post" action="ReceiptDuplicateB.html">
-                <label for="tip">Pay with Debit</label><br><br>
-                <label for="tip">Tip</label><br>
-                <input type="text" id="TaratipB" required><br>
-                <button type="submit" onclick="saveTipDebit()">Pay</button>
+                <label for="tip"><b>Pay with Debit</b></label><br><br>
+                <label for="tip"><b>Tip</b></label><br>
+                <input type="text" id="DEtipB" required><br>
+                <button type="submit" onclick="saveTipDebit()" class="btn2">Pay</button>
             </form>
         </div>
 
@@ -119,31 +119,27 @@
             <div class=column style=float:left;margin-left:15%>
                 <a href=Restaurant_Review.html class=btn2 style=text-decoration:none;cursor:context-menu>Back To Review</a>
             </div>
-
-            <div class=column style=float:right;margin-right:15%>
-                <li onclick=payment() class=btn2 style=cursor:context-menu id=tipcredit>Don't use this button will remove soon</li>
-            </div>
         </div>
     </body>
     <script>
-        function payment(){
-            var check=prompt("Please enter CREDIT to pay with credit, DEBIT to pay with debit, or CASH in all caps to pay with cash")
-            if(check === "CREDIT"){
-                var Credtip=prompt("Please enter how much you want to tip (Just type in tip for now)")
-                if(Credtip === "tip"){
-                window.location.href="ReceiptDuplicate.html"
-                saveTipCredit()
-            }
-            }
-            else if(check === "DEBIT"){
-                var dtip=prompt("Please enter how much you want to tip (Just type in Tip for now)")
-                if(dtip === "Tip"){
-                window.location.href="ReceiptDuplicateB.html"}
-            }
-            else if(check === "CASH"){
-                window.location.href="Receipt.html"
-            }
-        }
+        // function payment(){
+        //     var check=prompt("Please enter CREDIT to pay with credit, DEBIT to pay with debit, or CASH in all caps to pay with cash")
+        //     if(check === "CREDIT"){
+        //         var Credtip=prompt("Please enter how much you want to tip (Just type in tip for now)")
+        //         if(Credtip === "tip"){
+        //         window.location.href="ReceiptDuplicate.html"
+        //         saveTipCredit()
+        //     }
+        //     }
+        //     else if(check === "DEBIT"){
+        //         var dtip=prompt("Please enter how much you want to tip (Just type in Tip for now)")
+        //         if(dtip === "Tip"){
+        //         window.location.href="ReceiptDuplicateB.html"}
+        //     }
+        //     else if(check === "CASH"){
+        //         window.location.href="Receipt.html"
+        //     }
+        // }
         
         //function addItem(){
         //var thisitem=(Whatever the item is named)
