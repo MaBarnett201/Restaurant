@@ -1,5 +1,9 @@
 let order = [];
 let itemOne = 0;
+let appetizersMenu = [];
+let entreersMenu = [];
+let sideMenu = [];
+let dessertMenu = [];
 
 $(document).ready(function() {  ///added any clicked item to cart and sidebar
     $(".item").click(function(){
@@ -82,6 +86,13 @@ function editDesc(){
     $(".expanded").children(".item-desc").text(x);
     console.log("item name has been changed");
 };
+
+$(document).ready(function saveMenuChanges(){
+    var u = $(".appetizers").children(".item2").children(".item-price").text() 
+    appetizersMenu.push(u);
+    console.log(appetizersMenu);
+    console.log("test " + u);
+});
 
 // const fileSelector = document.getElementById('file-selector');
 // fileSelector.addEventListener('change', (event) => {
