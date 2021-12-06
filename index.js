@@ -166,15 +166,7 @@ function addTip(){
     var tipInfo=JSON.parse(localStorage.getItem("tip"))
     var tipName=tipInfo.YourTip;
     document.getElementById("tip").innerHTML +=
-    tipName
-    }
-
-function addTipB(){
-    var tipInfo=JSON.parse(localStorage.getItem("tip"))
-    var tipName=tipInfo.YourTip;
-    document.getElementById("tip").innerHTML +=
-    tipName
-    console.log("Working")
+    tipName + '.00'
     }
 
 function onloadTest(){
@@ -194,11 +186,15 @@ function CheckoutName() {
     custName;
     }
 
-function saveFoodCost(){
-    var NewCost=document.getElementById("totalpricetest").value;
-    var GCost={YourCost: NewCost}
-    var StoredCost=JSON.stringify(GCost)
-    localStorage.setItem("cost", StoredCost)
+function addItems(){
+    var costInfo=localStorage.getItem("order")
+    var costName=costInfo.split()
+    var ch=','
+    var count=(costInfo.split(ch).length)*5
+    document.getElementById("itemsbought").innerHTML +=
+    costName
+    document.getElementById("costtest").innerHTML +=
+    '$' + count + '.00'
     }
 
 function addCost(){
@@ -208,3 +204,10 @@ function addCost(){
     costName
     }
 
+function addTimer(){
+    var costInfo=localStorage.getItem("order")
+    var ch=','
+    var count=9+(costInfo.split(ch).length)
+    document.getElementById("time").innerHTML +=
+    count + ' minutes'
+}
