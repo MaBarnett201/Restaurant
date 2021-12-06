@@ -48,7 +48,7 @@
         }
         
     </style>
-    <body>
+    <body onload="CheckoutName(); addCost()">
         <div class=columnmain>
             <div class=column style="text-align:center;">
                 <h1>Dine & Dash Checkout</h1>
@@ -57,6 +57,7 @@
             <div class=totalItems>
                 <div class=column>
                     <h3>Customer Name:</h3>
+                    <p id=checkname></p>
                 </div>
 
                 <br/>
@@ -68,6 +69,7 @@
     
                     <div class=column style="float:right;width:10px;height:10px;margin:2px;">
                         <p style="font-size:150%;"><b>Cost:</b></p>
+                        <p id=costtest></p>
                     </div>
                 </div>
             </div>
