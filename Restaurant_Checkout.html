@@ -48,7 +48,7 @@
         }
         
     </style>
-    <body onload="CheckoutName(); addCost()">
+    <body onload="CheckoutName(); addItems()">
         <div class=columnmain>
             <div class=column style="text-align:center;">
                 <h1>Dine & Dash Checkout</h1>
@@ -65,11 +65,12 @@
                 <div class=columnmain style="width:84%;float:left;">
                     <div class=column style="float:left;width:10px;height:10px;margin:2px;">
                         <p style="font-size:150%;"><b>Items:</b></p>
+                        <p id=itemsbought></p>
                     </div>
     
                     <div class=column style="float:right;width:10px;height:10px;margin:2px;">
                         <p style="font-size:150%;"><b>Cost:</b></p>
-                        <p id=costtest></p>
+                        <p id=costtest class=next></p>
                     </div>
                 </div>
             </div>
@@ -119,7 +120,10 @@
 
         <div class=column style=width:45%;margin-left:auto;margin-right:auto;display:block;>
             <div class=column style=float:left;margin-left:15%>
-                <a href=Restaurant_Review.html class=btn2 style=text-decoration:none;cursor:context-menu>Back To Review</a>
+                <a href=menu.html class=btn2 style=text-decoration:none;cursor:context-menu>Back To Menu</a>
+            </div>
+            <div class=column style=float:right;margin-right:15%>
+                <a href=index.html class=btn2 style=text-decoration:none;cursor:context-menu>Log Out</a>
             </div>
         </div>
     </body>
