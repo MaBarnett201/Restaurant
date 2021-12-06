@@ -46,6 +46,7 @@ function orderSave(){   // converts array order to string and stores it in local
     localStorage.setItem('order', stringOrder);
 };
 
+
 $(document).ready(function() {  /// manager menu, clicked item expands and displays edit buttons
     $('.item2').on("click",function(e){
         if ($(this).hasClass("expanded")){
@@ -68,6 +69,7 @@ $(document).ready(function() {  /// manager menu, clicked item expands and displ
         }
     });
 });
+
 
 function editName(){
     let x = window.prompt("Please enter the new item name.")
@@ -144,3 +146,65 @@ function displayName() {
     document.getElementById("welcomeUser").innerHTML +=
     "Welcome, " + custName;
 };
+
+
+function saveTipCredit(){
+    var NewTip=document.getElementById("CRtip").value;
+    var GTip={YourTip: NewTip}
+    var StoredTip=JSON.stringify(GTip)
+    localStorage.setItem("tip", StoredTip)
+    }
+
+function saveTipDebit(){
+    var NewTip=document.getElementById("DEtipB").value;
+    var GTip={YourTip: NewTip}
+    var StoredTip=JSON.stringify(GTip)
+    localStorage.setItem("tip", StoredTip)
+    }
+
+function addTip(){
+    var tipInfo=JSON.parse(localStorage.getItem("tip"))
+    var tipName=tipInfo.YourTip;
+    document.getElementById("tip").innerHTML +=
+    tipName
+    }
+
+function addTipB(){
+    var tipInfo=JSON.parse(localStorage.getItem("tip"))
+    var tipName=tipInfo.YourTip;
+    document.getElementById("tip").innerHTML +=
+    tipName
+    console.log("Working")
+    }
+
+function onloadTest(){
+    if(isNaN(document.getElementById("tip").innerHTML)){
+    window.location.href="Restaurant_Checkout.html"
+    alert("Please enter a number")
+    }
+    else{
+        console.log("yes")
+        }
+    }
+
+function CheckoutName() {
+    var custInfo = JSON.parse(localStorage.getItem("user"));
+    var custName = custInfo.username;
+    document.getElementById("checkname").innerHTML +=
+    custName;
+    }
+
+function saveFoodCost(){
+    var NewCost=document.getElementById("totalpricetest").value;
+    var GCost={YourCost: NewCost}
+    var StoredCost=JSON.stringify(GCost)
+    localStorage.setItem("cost", StoredCost)
+    }
+
+function addCost(){
+    var costInfo=JSON.parse(localStorage.getItem("cost"))
+    var costName=costInfo.YourCost;
+    document.getElementById("costtest").innerHTML +=
+    costName
+    }
+

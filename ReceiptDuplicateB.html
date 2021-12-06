@@ -1,5 +1,6 @@
 <html>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="index.js"></script>
     <style>
         *{
             font-family:Arial, Helvetica, sans-serif;
@@ -48,9 +49,11 @@
         .totalItems{
             opacity: 1;
         }
-
+        .next{
+            display:inline-block
+        }
     </style>
-    <body>
+    <body onload="addTipB(); onloadTest()">
         <div class=columnmain>
             <div class=column style=text-align:center>
                 <h1>Dine & Dash Receipt</h1>
@@ -82,8 +85,9 @@
                 </div>
 
                 <h3>Tip:</h3>
-                <div class=column style=margin:2px>
-                    <p id=tip></p>
+                <div id=tippy class=column style=margin:2px>
+                    <p class=next>$</p>
+                    <p id=tip class=next></p>
                 </div>
 
                 <h3>Time Required To Complete Order:</h3>
@@ -105,9 +109,6 @@
         </div>
     </body>
     <script>
-        document.getElementbyClassName("item").innerHTML=localStorage.getItem("item-price")
-        document.getElementbyClassName("column").innerHTML=localStorage.getItem("check")
-        document.getElementbyClassName("column").innerHTML=localStorage.getItem("tip")
 
         //function addItem(){
         //var item=(Whatever the item is named)
@@ -140,15 +141,6 @@
         //(When item was selected from the menu){
         //var paragraph=document.getElementByID("tip");
         //var text=document.createTextNode(CTip)
-        //paragraph.appendChild(text)
-        //}
-        //}
-
-        //function addPaymenttype(){
-        //var Paytype=(Whatever the type is)
-        //(When payment type was selected){
-        //var paragraph=document.getElementByID("ptype");
-        //var text=document.createTextNode(Paytype)
         //paragraph.appendChild(text)
         //}
         //}
