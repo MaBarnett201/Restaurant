@@ -1,26 +1,32 @@
 let order = [];
 let itemOne = 0;
 let appetizersMenu = [];
-let entreersMenu = [];
+let entreesMenu = [];
 let sideMenu = [];
 let dessertMenu = [];
+let managerPage = 0;
+let hasChange = localStorage.getItem("wholeMenu");
 
-$(document).ready(function() {  ///added any clicked item to cart and sidebar
-    $(".item").click(function(){
-        $(this).children(".item-price").children().clone().appendTo(".sidebarItemName");
-        order.push($(this).children(".item-price").children().text());
-        console.log("item added to cart");
-        console.log(order);
-        $(".sidebarItemPrice").text("\$5.00");	
-        if (itemOne === 0){  
-            cartTotalPrice();
-            itemOne++
-        }
-        else{
-            itemPrice();
-        }
-    });
-});
+// $(document).ready(function() { ///added any clicked item to cart and sidebar
+//     if (managerPage === 0){
+//         $(".item2").click(function(){
+//             $(this).children(".item-price").children().clone().appendTo(".sidebarItemName");
+//             order.push($(this).children(".item-price").children().text());
+//             console.log("item added to cart");
+//             console.log(order);
+//             $(".sidebarItemPrice").text("\$5.00");
+    
+//             if (itemOne === 0){  
+//                 cartTotalPrice();
+//                 itemOne++;
+//             }
+//             else{
+//                 itemPrice();
+//             }
+//         })
+//     }
+// });
+
 
 
 function itemPrice(){   /// when an item is added to cart this adds the price
@@ -50,55 +56,105 @@ function orderSave(){   // converts array order to string and stores it in local
     localStorage.setItem('order', stringOrder);
 };
 
-
 $(document).ready(function() {  /// manager menu, clicked item expands and displays edit buttons
-    $('.item2').on("click",function(e){
-        if ($(this).hasClass("expanded")){
-            $(this).remove(".modifyButtons");
-            $("input").remove();
-            $(this).css({"height": "270px", "transition": ".3s ease-in-and-out"});
-            $(this).parent().css({"height": "300px", "transition": ".3s ease-in-and-out"});
-            $(this).removeClass("expanded");
+    if (managerPage === 1){
+        $(document).on('click',".item2", function(){
+            if ($(this).hasClass("expanded")){
+                $(this).remove(".modifyButtons");
+                $("input").remove();
+                $(this).css({"height": "270px", "transition": ".3s ease-in-and-out"});
+                $(this).parent().css({"height": "300px", "transition": ".3s ease-in-and-out"});
+                $(this).removeClass("expanded");
+            }
+            else {
+                $(this).addClass("expanded");
+                $(this).css({"height": "350px", "transition": ".3s ease-in-and-out"});
+                $(this).parent().css({"height": "330px", "transition": ".3s ease-in-and-out"});
+                let r= $('<input type="button" value="Change picture" class="modifyButtons"/>');
+                let s= $('<input type="button" value="Edit item Name" class="modifyButtons" onclick="editName()"/>');
+                let t= $('<input type="button" value="Edit item Desc" class="modifyButtons" onclick="editDesc()"/>');
+                $(this).after().append(r);
+                $(this).after().append(s);
+                $(this).after().append(t);
+            }
+        });
         }
-        else {
-            $(this).addClass("expanded");
-            $(this).css({"height": "350px", "transition": ".3s ease-in-and-out"});
-            $(this).parent().css({"height": "330px", "transition": ".3s ease-in-and-out"});
-            let r= $('<input type="button" value="Change picture" class="modifyButtons"/>');
-            let s= $('<input type="button" value="Edit item Name" class="modifyButtons" onclick="editName()"/>');
-            let t= $('<input type="button" value="Edit item Desc" class="modifyButtons" onclick="editDesc()"/>');
-            $(this).after().append(r);
-            $(this).after().append(s);
-            $(this).after().append(t);
-        }
-    });
+    else {
+        $(document).on('click',".item2", function(){
+            console.log("function ran")
+            $(this).children(".item-price").children().clone().appendTo(".sidebarItemName");
+            order.push($(this).children(".item-price").children().text());
+            console.log("item added to cart");
+            console.log(order);
+            $(".sidebarItemPrice").text("\$5.00");
+        
+            if (itemOne === 0){  
+                cartTotalPrice();
+                itemOne++;
+            }
+            else{
+                itemPrice();
+            }
+        })
+    }
 });
+// $(document).ready(function() {  /// manager menu, clicked item expands and displays edit buttons
+//     if (managerPage === 1){
+//         $('.item2').on("click",function(e){
+//             if ($(this).hasClass("expanded")){
+//                 $(this).remove(".modifyButtons");
+//                 $("input").remove();
+//                 $(this).css({"height": "270px", "transition": ".3s ease-in-and-out"});
+//                 $(this).parent().css({"height": "300px", "transition": ".3s ease-in-and-out"});
+//                 $(this).removeClass("expanded");
+//             }
+//             else {
+//                 $(this).addClass("expanded");
+//                 $(this).css({"height": "350px", "transition": ".3s ease-in-and-out"});
+//                 $(this).parent().css({"height": "330px", "transition": ".3s ease-in-and-out"});
+//                 let r= $('<input type="button" value="Change picture" class="modifyButtons"/>');
+//                 let s= $('<input type="button" value="Edit item Name" class="modifyButtons" onclick="editName()"/>');
+//                 let t= $('<input type="button" value="Edit item Desc" class="modifyButtons" onclick="editDesc()"/>');
+//                 $(this).after().append(r);
+//                 $(this).after().append(s);
+//                 $(this).after().append(t);
+//             }
+//         });
+//     }
+// });
 
 
-function editName(){
-    let x = window.prompt("Please enter the new item name.")
-    $(".expanded").children(".item-price").children(".item-text").text(x);
+function editName(){    /// edits the name of an item
+    let c = window.prompt("Please enter the new item name.")
+    $(".expanded").children(".item-price").children(".item-text").text(c);
     console.log("item name has been changed");
 };
 
-function editDesc(){
+function editDesc(){    /// edits the description of an item
     let x = window.prompt("Please enter the new item name.")
     $(".expanded").children(".item-desc").text(x);
     console.log("item name has been changed");
 };
 
-$(document).ready(function saveMenuChanges(){
-    var u = $(".appetizers").children(".item2").children(".item-price").text() 
-    appetizersMenu.push(u);
-    console.log(appetizersMenu);
-    console.log("test " + u);
+$(window).on("unload", function saveMenuChanges(){ /// when the manager page unloads this will save the entire menu in local storage
+    if (managerPage === 1){
+        localStorage.setItem("wholeMenu", $(".menu-container").html());
+        managerPage = 0;
+    }
 });
 
-// const fileSelector = document.getElementById('file-selector');
-// fileSelector.addEventListener('change', (event) => {
-//   const fileList = event.target.files;
-//   console.log(fileList);
-// });
+$(document).ready(function getChangedMenu(){    /// when the user menu loads this checks to see if there is a modified menu, and will use it if there is a updated menu in LS
+    if(hasChange){
+        console.log('Name exists');
+        $(".menu-container").html(localStorage.getItem("wholeMenu"));
+    }else{
+        console.log('Name is not found');
+    }      
+});
+
+
+
+
 
 function register() {
     var newName = document.getElementById("name").value;
@@ -177,7 +233,15 @@ function addTip(){
     var tipInfo=JSON.parse(localStorage.getItem("tip"))
     var tipName=tipInfo.YourTip;
     document.getElementById("tip").innerHTML +=
-    tipName + '.00'
+    tipName
+    }
+
+function addTipB(){
+    var tipInfo=JSON.parse(localStorage.getItem("tip"))
+    var tipName=tipInfo.YourTip;
+    document.getElementById("tip").innerHTML +=
+    tipName
+    console.log("Working")
     }
 
 function onloadTest(){
@@ -197,15 +261,11 @@ function CheckoutName() {
     custName;
     }
 
-function addItems(){
-    var costInfo=localStorage.getItem("order")
-    var costName=costInfo.split()
-    var ch=','
-    var count=(costInfo.split(ch).length)*5
-    document.getElementById("itemsbought").innerHTML +=
-    costName
-    document.getElementById("costtest").innerHTML +=
-    '$' + count + '.00'
+function saveFoodCost(){
+    var NewCost=document.getElementById("totalpricetest").value;
+    var GCost={YourCost: NewCost}
+    var StoredCost=JSON.stringify(GCost)
+    localStorage.setItem("cost", StoredCost)
     }
 
 function addCost(){
@@ -215,10 +275,3 @@ function addCost(){
     costName
     }
 
-function addTimer(){
-    var costInfo=localStorage.getItem("order")
-    var ch=','
-    var count=9+(costInfo.split(ch).length)
-    document.getElementById("time").innerHTML +=
-    count + ' minutes'
-}
