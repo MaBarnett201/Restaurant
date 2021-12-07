@@ -195,7 +195,7 @@ function verify(){
     var savedAdmin = JSON.parse(localStorage.getItem("admin"));
 
     if (enteredEmail === savedAdmin.email && enteredPass === savedAdmin.password){
-        window.location.href = "manager-home.html";
+        window.location.href = "menu-manager.html";
         console.log("admin logged in");
     }
     if (enteredEmail === savedUser.email && enteredPass === savedUser.password) {
@@ -234,7 +234,6 @@ function addTip(){
     var tipName=tipInfo.YourTip;
     document.getElementById("tip").innerHTML +=
     tipName
-<<<<<<< Updated upstream
     }
 
 function addTipB(){
@@ -243,11 +242,9 @@ function addTipB(){
     document.getElementById("tip").innerHTML +=
     tipName
     console.log("Working")
-=======
     if(tipName>100 || tipName<0){
         window.location.href="Restaurant_Checkout.html"
         alert("Please enter a percentage between 0 and 100 percent")
->>>>>>> Stashed changes
     }
     else if(isNaN(document.getElementById("tip").innerHTML)){
         window.location.href="Restaurant_Checkout.html"
@@ -269,7 +266,6 @@ function saveFoodCost(){
     localStorage.setItem("cost", StoredCost)
     }
 
-<<<<<<< Updated upstream
 function addCost(){
     var costInfo=JSON.parse(localStorage.getItem("cost"))
     var costName=costInfo.YourCost;
@@ -277,7 +273,6 @@ function addCost(){
     costName
     }
 
-=======
 function addTimer(){
     var costInfo=localStorage.getItem("order")
     var ch=','
@@ -285,4 +280,13 @@ function addTimer(){
     document.getElementById("time").innerHTML +=
     count + ' minutes'
 }
->>>>>>> Stashed changes
+function addItems(){
+    var costInfo=localStorage.getItem("order")
+    var costName=costInfo.split()
+    var ch=','
+    var count=(costInfo.split(ch).length)*5
+    document.getElementById("itemsbought").innerHTML +=
+    costName
+    document.getElementById("costtest").innerHTML +=
+    '$' + count + '.00'
+    }
