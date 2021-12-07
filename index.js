@@ -195,7 +195,7 @@ function verify(){
     var savedAdmin = JSON.parse(localStorage.getItem("admin"));
 
     if (enteredEmail === savedAdmin.email && enteredPass === savedAdmin.password){
-        window.location.href = "menu-manager.html";
+        window.location.href = "manager-home.html";
         console.log("admin logged in");
     }
     if (enteredEmail === savedUser.email && enteredPass === savedUser.password) {
