@@ -159,6 +159,7 @@ function verify(){
 
     if (enteredEmail === savedAdmin.email && enteredPass === savedAdmin.password){
         window.location.href = "manager_home.html";
+
         console.log("admin logged in");
     }
     if (enteredEmail === savedUser.email && enteredPass === savedUser.password) {
@@ -175,6 +176,16 @@ function displayName() {
     var custName = custInfo.username;
     document.getElementById("welcomeUser").innerHTML +=
     "Welcome, " + custName;
+
+}
+
+function checkoutName() {
+    var custInfo = JSON.parse(localStorage.getItem("user"));
+    var custName = custInfo.username;
+    document.getElementById("orderName").innerHTML +=
+    custName;
+}
+
 };
 
 
@@ -243,3 +254,15 @@ function addTimer(){
     document.getElementById("time").innerHTML +=
     count + ' minutes'
 }
+
+function addItems(){
+    var costInfo=localStorage.getItem("order")
+    var costName=costInfo.split()
+    var ch=','
+    var count=(costInfo.split(ch).length)*5
+    document.getElementById("itemsbought").innerHTML +=
+    costName
+    document.getElementById("costtest").innerHTML +=
+    '$' + count + '.00'
+    }
+
