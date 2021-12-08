@@ -6,7 +6,7 @@ let sideMenu = [];
 let dessertMenu = [];
 let managerPage = 0;
 let hasChange = localStorage.getItem("wholeMenu");
-
+let safeUnloadVal = 0;
 
 function itemPrice(){   /// when an item is added to cart this adds the price
     $(".sidebar-right").children("p").first().clone().prependTo(".sidebar-right");
@@ -34,6 +34,7 @@ $(document).ready(function() { // removed clicked item in sidebar, also removed 
             $(".sidebar-right").prepend("<p></p>");
             $(".sidebar-right").children("p").addClass("sidebarItemPrice");
             console.log("test");
+            $( "span" ).text("0");
             return;
         }
         return cartTotalPrice();
@@ -49,22 +50,19 @@ $(document).ready(function() {  /// manager menu, clicked item expands and displ
     if (managerPage === 1){
         $(document).on('click',".item2", function(){
             if ($(this).hasClass("expanded")){
-                $(this).remove(".modifyButtons");
-                $("input").remove();
-                $(this).css({"height": "270px", "transition": ".3s ease-in-and-out"});
-                $(this).parent().css({"height": "300px", "transition": ".3s ease-in-and-out"});
-                $(this).removeClass("expanded");
+                return;
             }
             else {
                 $(this).addClass("expanded");
-                $(this).css({"height": "350px", "transition": ".3s ease-in-and-out"});
-                $(this).parent().css({"height": "330px", "transition": ".3s ease-in-and-out"});
-                let r= $('<input type="button" value="Change picture" class="modifyButtons"/>');
+                $(this).parent().addClass("expandedParent");
+                let r= $('<input type="button" value="Edit item Image" class="modifyButtons" onclick="editImage()"/>');
                 let s= $('<input type="button" value="Edit item Name" class="modifyButtons" onclick="editName()"/>');
                 let t= $('<input type="button" value="Edit item Desc" class="modifyButtons" onclick="editDesc()"/>');
+                let v= $('<input type="button" value="Close editor" class="modifyButtons" onclick="closeEdit()"/>');
                 $(this).after().append(r);
                 $(this).after().append(s);
                 $(this).after().append(t);
+                $(this).after().append(v);
             }
         });
         }
@@ -86,6 +84,10 @@ $(document).ready(function() {  /// manager menu, clicked item expands and displ
     }
 });
 
+function editImage(){   // edits the images but does not work yet
+    let gimg = prompt('picture URL', "IMG URL");
+    $(".expanded").children("img").attr("src", gimg);
+};
 
 function editName(){    /// edits the name of an item
     let c = window.prompt("Please enter the new item name.")
@@ -99,12 +101,40 @@ function editDesc(){    /// edits the description of an item
     console.log("item name has been changed");
 };
 
-$(window).on("unload", function saveMenuChanges(){ /// when the manager page unloads this will save the entire menu in local storage
-    if (managerPage === 1){
+function closeEdit(){   // closes the item editor
+    $(document).remove("modifyButtons");
+    $("input").remove();
+    $("div").removeClass("expanded");
+    $("article").removeClass("expandedParent");
+};
+
+function saveMenuChanges(){ /// when the manager page unloads this will save the entire menu in local storage
+    if (managerPage === 1 && safeUnloadVal === 0){
+        $(document).remove(".modifyButtons");
+        $("input").remove();
+        $("article").removeClass("expandedParent");
+        $("div").removeClass("expanded");
         localStorage.setItem("wholeMenu", $(".menu-container").html());
         managerPage = 0;
+        window.location.href="manager_home.html";
     }
-});
+};
+
+function safeUnload(){ ///allows the user to leave the menu without making chages
+    let q = window.prompt("No changes will be saved. Type Yes to continue or No to return");
+    console.log(q);
+    if (q === "yes" ||q === "YES" || q === "Yes" || q === "YEs" || q === "yES" || q === "yeS"){
+        safeUnloadVal = 1;
+        localStorage.removeItem("wholeMenu");
+        window.location.href="manager_home.html";
+    }
+    else if (q === "no" || q === "No" || q === "NO" || q === "nO"){
+        safeUnloadVal = 0;
+    }
+    else{
+        window.alert("please enter Yes or No. If you wish to save changes type no and select Save and Return");
+    }
+};
 
 $(document).ready(function getChangedMenu(){    /// when the user menu loads this checks to see if there is a modified menu, and will use it if there is a updated menu in LS
     if(hasChange){
@@ -114,9 +144,6 @@ $(document).ready(function getChangedMenu(){    /// when the user menu loads thi
         console.log('Name is not found');
     }      
 });
-
-
-
 
 
 function register() {
@@ -185,7 +212,6 @@ function checkoutName() {
     document.getElementById("orderName").innerHTML +=
     custName;
 }
-
 
 
 function saveTipCredit(){

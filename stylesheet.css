@@ -474,3 +474,11 @@ h4#welcomeUser{
     background-color: #B32C06;
     margin: 2px;
 }
+.expanded{
+    height: 400px;
+    transition: .3s ease-in-out;
+}
+.expandedParent{
+    height: 400px;
+    transition: .3s ease-in-out;
+}
