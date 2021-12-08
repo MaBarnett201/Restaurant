@@ -214,8 +214,6 @@ function checkoutName() {
 }
 
 
-
-
 function saveTipCredit(){
     var NewTip=document.getElementById("CRtip").value;
     var GTip={YourTip: NewTip}
@@ -293,3 +291,15 @@ function addItems(){
     '$' + count + '.00'
     }
 
+function addTotal() {
+    var costInfo = localStorage.getItem("order");
+    var ch=",";
+    var count=(costInfo.split(ch).length)*5;
+    document.getElementById("costtest").innerHTML +=
+    "$" + count + ".00";
+}
+
+function cancelOrder() {
+    localStorage.removeItem("order");
+    $(".openOrdersInfo").empty();
+}

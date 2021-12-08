@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>Open Orders</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="styleSheet.css">
+        <script src="index.js"></script>
+    </head>
+
+    <body onload="CheckoutName(); addTotal()">
+        <section class="manager-options">
+            <div class="mng-box openOrders">
+                <h1 class="mng-view openOrders">Open Orders</h1>
+
+                <div class="openOrdersInfo">
+                    <div class="openOrdersName">
+                        <h3>Customer Name:</h3>
+                        <h3 id="orderName"></h3>
+                        <p id="checkname"></p>
+                    </div>
+
+                    <div class="openOrdersTotal">
+                        <h3>Order Total:</h3>
+
+                        <p id="costtest"></p>
+                    </div>
+                </div>
+
+                <button type="button" class="openOrderBtn" onclick="cancelOrder()">Cancel Open Order</button>
+                <button type="button" class="openOrderBtn" onclick="location.href = 'manager_home.html'">Return to Home</button>
+                <button type="button" class="openOrderBtn" onclick="cancelOrder()">Cancel Open Order</button>
+            </div>
+        </section>
+    </body>
+</html>
