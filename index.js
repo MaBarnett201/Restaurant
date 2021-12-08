@@ -233,19 +233,11 @@ function addTip(){
     var tipName=tipInfo.YourTip;
     document.getElementById("tip").innerHTML +=
     tipName
-    }
-
-function addTipB(){
-    var tipInfo=JSON.parse(localStorage.getItem("tip"))
-    var tipName=tipInfo.YourTip;
-    document.getElementById("tip").innerHTML +=
-    tipName
-    console.log("Working")
-    if(tipName>100 || tipName<0){
+    if (tipName>100 || tipName<0){
         window.location.href="Restaurant_Checkout.html"
         alert("Please enter a percentage between 0 and 100 percent")
     }
-    else if(isNaN(document.getElementById("tip").innerHTML)){
+    else if(isNaN(tipName)){
         window.location.href="Restaurant_Checkout.html"
         alert("Please enter a number")
         }
@@ -256,20 +248,6 @@ function CheckoutName() {
     var custName = custInfo.username;
     document.getElementById("checkname").innerHTML +=
     custName;
-    }
-
-function saveFoodCost(){
-    var NewCost=document.getElementById("totalpricetest").value;
-    var GCost={YourCost: NewCost}
-    var StoredCost=JSON.stringify(GCost)
-    localStorage.setItem("cost", StoredCost)
-    }
-
-function addCost(){
-    var costInfo=JSON.parse(localStorage.getItem("cost"))
-    var costName=costInfo.YourCost;
-    document.getElementById("costtest").innerHTML +=
-    costName
     }
 
 function addTimer(){
