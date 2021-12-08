@@ -212,6 +212,16 @@ function displayName() {
     var custName = custInfo.username;
     document.getElementById("welcomeUser").innerHTML +=
     "Welcome, " + custName;
+
+}
+
+function checkoutName() {
+    var custInfo = JSON.parse(localStorage.getItem("user"));
+    var custName = custInfo.username;
+    document.getElementById("orderName").innerHTML +=
+    custName;
+}
+
 };
 
 

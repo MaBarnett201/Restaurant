@@ -46,8 +46,13 @@
         .totalItems{
             opacity: 1;
         }
+
+        h3#orderName{
+            font-size: 16pt;
+        }
         
     </style>
+
     <body onload="CheckoutName(); addItems()">
         <div class=columnmain>
             <div class=column style="text-align:center;">
@@ -57,6 +62,8 @@
             <div class=totalItems>
                 <div class=column>
                     <h3>Customer Name:</h3>
+
+                    <h3 id="orderName"></h3>
                     <p id=checkname></p>
                 </div>
 
@@ -128,25 +135,26 @@
         </div>
     </body>
     <script>
-        // function payment(){
-        //     var check=prompt("Please enter CREDIT to pay with credit, DEBIT to pay with debit, or CASH in all caps to pay with cash")
-        //     if(check === "CREDIT"){
-        //         var Credtip=prompt("Please enter how much you want to tip (Just type in tip for now)")
-        //         if(Credtip === "tip"){
-        //         window.location.href="ReceiptDuplicate.html"
-        //         saveTipCredit()
-        //     }
-        //     }
-        //     else if(check === "DEBIT"){
-        //         var dtip=prompt("Please enter how much you want to tip (Just type in Tip for now)")
-        //         if(dtip === "Tip"){
-        //         window.location.href="ReceiptDuplicateB.html"}
-        //     }
-        //     else if(check === "CASH"){
-        //         window.location.href="Receipt.html"
-        //     }
-        // }
-        
+
+        function payment(){
+            var check=prompt("Please enter CREDIT to pay with credit, DEBIT to pay with debit, or CASH in all caps to pay with cash")
+            if(check === "CREDIT"){
+                var Credtip=prompt("Please enter how much you want to tip (Just type in tip for now)")
+                if(Credtip === "tip"){
+                window.location.href="ReceiptDuplicate.html"}
+            }
+            else if(check === "DEBIT"){
+                var dtip=prompt("Please enter how much you want to tip (Just type in Tip for now)")
+                if(dtip === "Tip"){
+                window.location.href="ReceiptDuplicateB.html"}
+            }
+            else if(check === "CASH"){
+                window.location.href="Receipt.html"
+            }
+        }
+        // document.getElementbyClassName("item").innerHTML=localStorage.getItem("item-price")
+
+
         //function addItem(){
         //var thisitem=(Whatever the item is named)
         //(When item was selected from the menu){
