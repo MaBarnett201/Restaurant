@@ -7,37 +7,17 @@ let dessertMenu = [];
 let managerPage = 0;
 let hasChange = localStorage.getItem("wholeMenu");
 
-// $(document).ready(function() { ///added any clicked item to cart and sidebar
-//     if (managerPage === 0){
-//         $(".item2").click(function(){
-//             $(this).children(".item-price").children().clone().appendTo(".sidebarItemName");
-//             order.push($(this).children(".item-price").children().text());
-//             console.log("item added to cart");
-//             console.log(order);
-//             $(".sidebarItemPrice").text("\$5.00");
-    
-//             if (itemOne === 0){  
-//                 cartTotalPrice();
-//                 itemOne++;
-//             }
-//             else{
-//                 itemPrice();
-//             }
-//         })
-//     }
-// });
-
-
 
 function itemPrice(){   /// when an item is added to cart this adds the price
     $(".sidebar-right").children("p").first().clone().prependTo(".sidebar-right");
+    console.log("item price");
     return cartTotalPrice();
 };
 
 function cartTotalPrice(){  /// after any item is added to sidebar cart this recalculates the total
     let n = $(".sidebar-right").children("p").length;
     $( "span" ).text(n * 5);
-    console.log("this is item <2")
+    console.log("total cart updated");
 };
 
 $(document).ready(function() { // removed clicked item in sidebar, also removed it from the cart array
@@ -47,6 +27,15 @@ $(document).ready(function() { // removed clicked item in sidebar, also removed 
         let x = order.indexOf(e.target,0);
         order.splice(x,1);
         console.log(order);
+        // return itemPrice();
+        console.log("item removed");
+        if (order.length === 0){
+            itemOne = 0;
+            $(".sidebar-right").prepend("<p></p>");
+            $(".sidebar-right").children("p").addClass("sidebarItemPrice");
+            console.log("test");
+            return;
+        }
         return cartTotalPrice();
     });
 });
@@ -81,11 +70,9 @@ $(document).ready(function() {  /// manager menu, clicked item expands and displ
         }
     else {
         $(document).on('click',".item2", function(){
-            console.log("function ran")
             $(this).children(".item-price").children().clone().appendTo(".sidebarItemName");
             order.push($(this).children(".item-price").children().text());
             console.log("item added to cart");
-            console.log(order);
             $(".sidebarItemPrice").text("\$5.00");
         
             if (itemOne === 0){  
@@ -98,30 +85,6 @@ $(document).ready(function() {  /// manager menu, clicked item expands and displ
         })
     }
 });
-// $(document).ready(function() {  /// manager menu, clicked item expands and displays edit buttons
-//     if (managerPage === 1){
-//         $('.item2').on("click",function(e){
-//             if ($(this).hasClass("expanded")){
-//                 $(this).remove(".modifyButtons");
-//                 $("input").remove();
-//                 $(this).css({"height": "270px", "transition": ".3s ease-in-and-out"});
-//                 $(this).parent().css({"height": "300px", "transition": ".3s ease-in-and-out"});
-//                 $(this).removeClass("expanded");
-//             }
-//             else {
-//                 $(this).addClass("expanded");
-//                 $(this).css({"height": "350px", "transition": ".3s ease-in-and-out"});
-//                 $(this).parent().css({"height": "330px", "transition": ".3s ease-in-and-out"});
-//                 let r= $('<input type="button" value="Change picture" class="modifyButtons"/>');
-//                 let s= $('<input type="button" value="Edit item Name" class="modifyButtons" onclick="editName()"/>');
-//                 let t= $('<input type="button" value="Edit item Desc" class="modifyButtons" onclick="editDesc()"/>');
-//                 $(this).after().append(r);
-//                 $(this).after().append(s);
-//                 $(this).after().append(t);
-//             }
-//         });
-//     }
-// });
 
 
 function editName(){    /// edits the name of an item
@@ -195,7 +158,7 @@ function verify(){
     var savedAdmin = JSON.parse(localStorage.getItem("admin"));
 
     if (enteredEmail === savedAdmin.email && enteredPass === savedAdmin.password){
-        window.location.href = "manager-home.html";
+        window.location.href = "manager_home.html";
         console.log("admin logged in");
     }
     if (enteredEmail === savedUser.email && enteredPass === savedUser.password) {
@@ -234,7 +197,6 @@ function addTip(){
     var tipName=tipInfo.YourTip;
     document.getElementById("tip").innerHTML +=
     tipName
-<<<<<<< Updated upstream
     }
 
 function addTipB(){
@@ -243,11 +205,9 @@ function addTipB(){
     document.getElementById("tip").innerHTML +=
     tipName
     console.log("Working")
-=======
     if(tipName>100 || tipName<0){
         window.location.href="Restaurant_Checkout.html"
         alert("Please enter a percentage between 0 and 100 percent")
->>>>>>> Stashed changes
     }
     else if(isNaN(document.getElementById("tip").innerHTML)){
         window.location.href="Restaurant_Checkout.html"
@@ -269,7 +229,6 @@ function saveFoodCost(){
     localStorage.setItem("cost", StoredCost)
     }
 
-<<<<<<< Updated upstream
 function addCost(){
     var costInfo=JSON.parse(localStorage.getItem("cost"))
     var costName=costInfo.YourCost;
@@ -277,7 +236,6 @@ function addCost(){
     costName
     }
 
-=======
 function addTimer(){
     var costInfo=localStorage.getItem("order")
     var ch=','
@@ -285,4 +243,3 @@ function addTimer(){
     document.getElementById("time").innerHTML +=
     count + ' minutes'
 }
->>>>>>> Stashed changes
