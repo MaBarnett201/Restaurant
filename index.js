@@ -132,7 +132,7 @@ function safeUnload(){ ///allows the user to leave the menu without making chage
         safeUnloadVal = 0;
     }
     else{
-        window.alert("please enter Yes or No. If you wish to save changes type no and select Save and Return");
+        window.alert("Please enter Yes or No. If you wish to save changes type no and select Save and Return");
     }
 };
 
