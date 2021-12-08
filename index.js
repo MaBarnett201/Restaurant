@@ -49,23 +49,28 @@ function orderSave(){   // converts array order to string and stores it in local
 $(document).ready(function() {  /// manager menu, clicked item expands and displays edit buttons
     if (managerPage === 1){
         $(document).on('click',".item2", function(){
-            if ($(this).hasClass("expanded")){
-                return;
+            if ($("div").hasClass("expanded") === true){
+                console.log("You can only expand one")
             }
-            else {
-                $(this).addClass("expanded");
-                $(this).parent().addClass("expandedParent");
-                let r= $('<input type="button" value="Edit item Image" class="modifyButtons" onclick="editImage()"/>');
-                let s= $('<input type="button" value="Edit item Name" class="modifyButtons" onclick="editName()"/>');
-                let t= $('<input type="button" value="Edit item Desc" class="modifyButtons" onclick="editDesc()"/>');
-                let v= $('<input type="button" value="Close editor" class="modifyButtons" onclick="closeEdit()"/>');
-                $(this).after().append(r);
-                $(this).after().append(s);
-                $(this).after().append(t);
-                $(this).after().append(v);
+            else{
+                if ($(this).hasClass("expanded")){
+                    return;
+                }
+                else {
+                    $(this).addClass("expanded");
+                    $(this).parent().addClass("expandedParent");
+                    let r= $('<input type="button" value="Edit item Image" class="modifyButtons" onclick="editImage()"/>');
+                    let s= $('<input type="button" value="Edit item Name" class="modifyButtons" onclick="editName()"/>');
+                    let t= $('<input type="button" value="Edit item Desc" class="modifyButtons" onclick="editDesc()"/>');
+                    let v= $('<input type="button" value="Close editor" class="modifyButtons" onclick="closeEdit()"/>');
+                    $(this).after().append(r);
+                    $(this).after().append(s);
+                    $(this).after().append(t);
+                    $(this).after().append(v);
+                }
             }
-        });
-        }
+        })
+    }
     else {
         $(document).on('click',".item2", function(){
             $(this).children(".item-price").children().clone().appendTo(".sidebarItemName");
