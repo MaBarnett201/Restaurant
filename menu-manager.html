@@ -12,14 +12,14 @@
     <body class="background" onload="displayName()">
         <div class="apps">
         <header class="header">
-            <h1>Dine & Dash Menu</h1>
+            <h1>Dine & Dash Manager Menu</h1>
             <h4 id="welcomeUser"></h4>
         </header>
         <section class="menu-content-flex">
             <div class="menu-container">
                 <h3 class="titles">Appetizers</h3>
                 <hr class="line">
-            <article class="menu-flex">
+            <article class="menu-flex" id="appetizers">
                 <div class="item2">
                     <img src="images/chicken fingers.jpg">
                     <div class="item-price">
@@ -58,11 +58,11 @@
             </article>
                 <h3 class="titles">Entrees</h3>
                 <hr class="line">
-            <article class="menu-flex">
+            <article class="menu-flex" id="entrees">
                 <div class="item2">
                     <img src="images/burger.jpg">
                     <div class="item-price">
-                        <p>Angus Burger</p>
+                        <p class="item-text">Angus Burger</p>
                     </div>
                     <p class="item-desc"><em>Flame grilled angus burger pattie, topped with lettuce, onion, pickles, american cheese. All on a fresh baked sesame bun.</em></p>
                 </div>
@@ -97,7 +97,7 @@
             </article>
                 <h3 class="titles">Dessert</h3>
                 <hr class="line">
-            <article class="menu-flex">
+            <article class="menu-flex" id="desserts">
                 <div class="item2">
                     <img src="images/dark-chocolate.jpg">
                     <div class="item-price">
@@ -136,7 +136,7 @@
             </article>
                 <h3 class="titles">Sides</h3>
                 <hr class="line">
-            <article class="menu-flex">
+            <article class="menu-flex" id="sides">
                 <div class="item2">
                     <img src="images/chips.jpg">
                     <div class="item-price">
@@ -175,28 +175,12 @@
             </article>
             </div>
             <div class="sidebarContainer sidebar">
-                <div class="userInfo">
-                    <p>All items are priced at $5.00.</p>
-                    <p>To remove an item, click on it in the cart.</p>
-                    <button class="checkoutBtn" onclick="orderSave()"><a href="Restaurant_Checkout.html" class="checkoutButton">Checkout</a> </button>
-                    <button class="checkoutBtn"><a href="index.html" class="checkoutButton">Logout</a> </button>
-                </div>
-                <h3 class="title">Cart</h3>
-                <hr class="line">
-                <div id="sidebar" class="slider-flex-right">
-                    <div class="sidebar-left">
-                        <p class="sidebarItemName" id="sidebarItemName"></p>
-                    </div>
-                    <div class="sidebar-right">
-                        <p class="sidebarItemPrice"></p>
-                        <div class="cartTotal">Total Price ~~ $<span class="spanPrice" id=totalpricetest></span>.00</div>
-                    </div>
-            </div>
+                <button><a href="index.html">Logout</a></button>
             </div>
         </section>
         </div>
         <script>
-            managerPage = 0;
-            // console.log(managerPage);
+            managerPage++;
+            console.log(managerPage);
         </script>
 </html>
