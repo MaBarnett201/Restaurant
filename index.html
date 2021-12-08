@@ -30,7 +30,11 @@
                 var enteredEmail = document.getElementById("userEmail").value;
                 var enteredPass = document.getElementById("userPassword").value;
 
-                if (enteredEmail === savedUser.email && enteredPass === savedUser.password) {
+                if (enteredEmail === "admin" && enteredPass === "adminpass") {
+                    document.location.href = "manager_home.html";
+                }
+                
+                else if (enteredEmail === savedUser.email && enteredPass === savedUser.password) {
                     document.location.href = "menu.html";
                 }
                 else{
