@@ -118,6 +118,15 @@ button:hover{
     background-color: #8a2408;
 }
 
+button.openOrderBtn{
+    font-size: 14pt;
+    padding: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: fit-content;
+}
+
 h5.signup{
     padding-top: 5%;
     padding-left: 2%;
@@ -298,6 +307,31 @@ div.mng-stacking{
     padding: 3% 0 0 0;
     color: #B32C06;
     --ionicon-stroke-width: 20px;
+}
+
+h1.openOrders{
+    text-decoration: none;
+}
+
+div.openOrders{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.openOrdersInfo{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+}
+
+div.openOrdersInfo p{
+    padding-top: 10%;
 }
 
 header.header{
