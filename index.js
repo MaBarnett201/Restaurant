@@ -71,7 +71,7 @@ $(document).ready(function() {  /// manager menu, clicked item expands and displ
             }
         })
     }
-    else {
+    else {  //adds item to cart 
         $(document).on('click',".item2", function(){
             $(this).children(".item-price").children().clone().appendTo(".sidebarItemName");
             order.push($(this).children(".item-price").children().text());
@@ -150,7 +150,7 @@ $(document).ready(function getChangedMenu(){    /// when the user menu loads thi
     }      
 });
 
-$(document).ready(function(){ 
+$(document).ready(function(){   ///adds items to cart when returning from checkoutpage
     if (managerPage === 0){
         let myStr = localStorage.getItem("order");
         let myArray = myStr.split(",");
