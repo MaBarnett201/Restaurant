@@ -7,6 +7,7 @@ let dessertMenu = [];
 let managerPage = 0;
 let hasChange = localStorage.getItem("wholeMenu");
 let safeUnloadVal = 0;
+let menu = 0;
 
 function itemPrice(){   /// when an item is added to cart this adds the price
     $(".sidebar-right").children("p").first().clone().prependTo(".sidebar-right");
@@ -15,7 +16,7 @@ function itemPrice(){   /// when an item is added to cart this adds the price
 };
 
 function cartTotalPrice(){  /// after any item is added to sidebar cart this recalculates the total
-    let n = $(".sidebar-right").children("p").length;
+    let n = $(".sidebarItemName").children("p").length;
     $( "span" ).text(n * 5);
     console.log("total cart updated");
 };
@@ -151,15 +152,15 @@ $(document).ready(function getChangedMenu(){    /// when the user menu loads thi
 });
 
 $(document).ready(function(){   ///adds items to cart when returning from checkoutpage
-    if (managerPage === 0){
+    if (managerPage === 0 && menu === 1 && localStorage.getItem("order") !== null){
         let myStr = localStorage.getItem("order");
         let myArray = myStr.split(",");
-        console.log(myStr);
-        console.log(myArray);
+        // console.log(myStr);
+        // console.log(myArray);
         for (let i = 0; i < myArray.length++; i++){
             let h = myArray.shift();
             order.push(h);
-            console.log(order);
+            // console.log(order);
             $(".item2").first().children(".item-price").children().clone().empty().appendTo(".sidebarItemName").append(h);
             itemPrice();
         }
