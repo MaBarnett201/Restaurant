@@ -366,9 +366,9 @@ h4#welcomeUser{
 }
 
 .slider-flex-right{
-    height: 600px;
+    height: fit-content;
     width: 100%;
-    border: 2px solid gray;
+    /* border: 2px solid gray; */
     background-color: white;
     /* margin-right: 40px; */
     margin-top: 10px;
@@ -451,19 +451,19 @@ h4#welcomeUser{
     border: 0 0 2px 0 solid gray;
 }
 .userInfo{
-    height: 150px;
+    display: flex;
+    flex-direction: column;
+    min-height: 150px;
     width: 100%;
     background-color: white;
     /* margin-right: 40px; */
     margin-top: 36px;
     margin-bottom: 10px;
-    border: 2px solid gray;
 }
 .sidebarContainer{
     width: 24%;
-    height: 800px;
+    height: fit-content;
     border: 2px solid gray;
-    height: 500px;
     background-color: white;
     margin-top: 35px;
 }
@@ -478,7 +478,12 @@ h4#welcomeUser{
     color: #FFFAEF;
     background-color: #B32C06;
     width: 70%;
-    margin: 0 40px;
+    align-self: center;
+    margin: 2% auto;
+}
+
+.checkoutBtn:hover{
+    box-shadow: none;
 }
 .modifyButtons{
     width: 98%;
