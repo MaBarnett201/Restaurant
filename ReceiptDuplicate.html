@@ -34,6 +34,7 @@
             background-color: #B32C06;
             border-style: none;
             display: inline-block;
+            margin: 5px;
         }
 
         .btn2:hover{
@@ -52,6 +53,41 @@
         .next{
             display:inline-block
         }
+        .placeItems{
+            display: flex;
+            width: 100%;
+    
+            height: fit-content;
+            
+        }
+        .placeItemsLeft{
+            width: 80%;
+            height: fit-content;
+        }
+        .placeItemsRight{
+            width: 20%;
+            height: fit-content;
+        }
+        .buttonContainer{
+            display: flex;
+            width: 100%;
+            height: fit-content;
+        }
+        .buttonLeft{
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            width: 50%;
+            height: fit-content;
+        }
+        .buttonRight{
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            width: 50%;
+            height: fit-content;
+        }
+
     </style>
     <body onload="addTip(); CheckoutName(); pickUpTime(); addItems(); addTimer(); totalCost()">
         <div class=columnmain>
@@ -82,13 +118,14 @@
 
             <div class=column>
                 <h3>Items purchased:</h3>
-                <div class=column style=margin:2px>
-                    <p id=itemsbought></p>
+                <div class="placeItems">
+                    <div class="placeItemsLeft"></div>
+                    <div class="placeItemsRight"></div>
                 </div>
 
                 <h3>Cost:</h3>
                 <div class=column style=margin:2px>
-                    <p id=costtest></p>
+                    <p id=costtest>$<span></span>.00</p>
                 </div>
 
                 <h3>Tip:</h3>
@@ -110,66 +147,18 @@
         </div>
         <br>
 
-        <div class=column style="width:45%;margin-left:auto;margin-right:auto;display:block;">
-            <div class=column style="float:left;margin-left:27%;">
+        <div class="buttonContainer">
+            <div class="buttonLeft">
                 <li onclick=window.print() class=btn2 style=cursor:context-menu>Print Receipt</li>
             </div>
 
-            <div class=column style="float:right;margin-right:27%">
-                <a href=index.html class=btn2 style=text-decoration:none;cursor:context-menu>Log Out</a>
+            <div class="buttonRight">
+                <a href=index.html onclick="clearOrder()" class=btn2 style=text-decoration:none;cursor:context-menu>Log Out</a>
             </div>
         </div>
     </body>
     <script>
-
-        //function addItem(){
-        //var item=(Whatever the item is named)
-        //(When item was selected from the menu){
-        //var paragraph=document.getElementByID("Items");
-        //var text=document.createTextNode(item)
-        //paragraph.appendChild(text)
-        //(If there is more than one item){
-        //let neWp=document.createElement("p");
-        //(Give element id of Items)
-        //}
-        //}
-        //}
-        
-        //function addCost(){
-        //var cost=(Whatever the cost is)
-        //(When item was selected from the menu){
-        //var paragraph=document.getElementByID("Cost");
-        //var text=document.createTextNode(cost)
-        //paragraph.appendChild(text)
-        //(If there is more than one item){
-        //let neWp=document.createElement("p");
-        //(Give element id of Cost)
-        //}
-        //}
-        //}
-
-        //function findTime(){
-        //var CTime=(Whatever the time is)
-        //(When item was selected from the menu){
-        //var paragraph=document.getElementByID("time");
-        //var text=document.createTextNode(CTime)
-        //paragraph.appendChild(text)
-        //}
-        //}
-
-        //function totalItems(){
-        //var name=(Customer name)
-        //var totalcost=(All costs added up. May need to make a separate function which adds up the costs)
-        //(When customer has name){
-        //var paragraph=document.getElementByID("cname");
-        //var text=document.createTextNode(name)
-        //paragraph.appendChild(text)
-        //}
-        //(When items have total cost){
-        //var paragraph=document.getElementByID("totalc");
-        //var text=document.createTextNode(totalcost)
-        //paragraph.appendChild(text)
-        //}
-        //}
+        receipt++
+       
     </script>
 </html>

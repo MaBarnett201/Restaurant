@@ -9,6 +9,7 @@ let hasChange = localStorage.getItem("wholeMenu");
 let safeUnloadVal = 0;
 let menu = 0;
 let checkout = 0;
+let receipt = 0;
 
 function itemPrice(){   /// when an item is added to cart this adds the price
     $(".sidebar-right").children("p").first().clone().prependTo(".sidebar-right");
@@ -173,12 +174,27 @@ $(document).ready(function(){   ///adds items to cart when returning from checko
         // console.log(myArray);
         for (let i = 0; i < myArray.length++; i++){
             let h = myArray.shift();
-            $(".placeItemsLeft").append("<p><p>").append(h);
-    
+            $(".placeItemsLeft").append("<p></p>").append(h);
+            $(".placeItemsRight").append("<p></p>").append("$5.00")
         }
+    }
+    else if ( receipt=== 1){
+        let myStr = localStorage.getItem("order");
+        let myArray = myStr.split(",");
+        // console.log(myStr);
+        // console.log(myArray);
+        for (let i = 0; i < myArray.length++; i++){
+            let h = myArray.shift();
+            $(".placeItemsLeft").append("<p></p>").append(h);
+            $(".placeItemsRight").append("<p></p>").append("$5.00")
+        }
+        $("#costtest").children("span").text(myArray.length * 5 - 5);
     }
 });
 
+function clearOrder(){
+    localStorage.removeItem("order");
+};
 
 function register() {
     var newName = document.getElementById("name").value;
