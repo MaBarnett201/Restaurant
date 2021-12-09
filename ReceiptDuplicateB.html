@@ -53,7 +53,7 @@
             display:inline-block
         }
     </style>
-    <body onload="addTip(); CheckoutName(); addItems(); addTimer()">
+    <body onload="addTip(); CheckoutName(); addItems(); addTimer(); totalCost()">
         <div class=columnmain>
             <div class=column style=text-align:center>
                 <h1>Dine & Dash Receipt</h1>
@@ -88,6 +88,11 @@
                 <div id=tippy class=column style=margin:2px>
                     <p id=tip class=next></p>
                     <p class=next>%</p>
+                </div>
+
+                <h3>Total Cost:</h3>
+                <div class=column style=margin:2px>
+                    <p id=costtestA class=next></p>
                 </div>
 
                 <h3>Estimated Time Required To Complete Order:</h3>

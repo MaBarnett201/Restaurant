@@ -53,7 +53,7 @@
             display:inline-block
         }
     </style>
-    <body onload="CheckoutName(); addItems(); addTimer()">
+    <body onload="CheckoutName(); addItems(); addTimer(); becauseYoureSpecial()">
         <div class=columnmain>
             <div class=column style=text-align:center>
                 <h1>Dine & Dash Receipt</h1>
@@ -87,6 +87,11 @@
                 <h3>Tip:</h3>
                 <div class=column style=margin:2px>
                     <p id=tip>N/A</p>
+                </div>
+
+                <h3>Total Cost:</h3>
+                <div class=column style=margin:2px>
+                    <p id=costtestF class=next></p>
                 </div>
 
                 <h3>Estimated Time Required To Complete Order:</h3>
