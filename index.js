@@ -274,12 +274,28 @@ function addItems(){
     '$' + count + '.00'
     }
 
-function addTotal() {
-    var costInfo = localStorage.getItem("order");
-    var ch=",";
-    var count=(costInfo.split(ch).length)*5;
-    document.getElementById("costtest").innerHTML +=
-    "$" + count + ".00";
+function becauseYoureSpecial(){
+    var costInfo=localStorage.getItem("order")
+    var costName=costInfo.split()
+    var ch=','
+    var count=(costInfo.split(ch).length)*5
+    document.getElementById("itemsbought").innerHTML +=
+    costName
+    document.getElementById("costtestF").innerHTML +=
+    '$' + count + '.00'
+    }
+
+function totalCost(){
+    var costInfo=localStorage.getItem("order")
+    var costName=costInfo.split()
+    var ch=','
+    var count=(costInfo.split(ch).length)*5
+    var tipInfo=JSON.parse(localStorage.getItem("tip"))
+    var tipName=tipInfo.YourTip;
+    var percentage=(Number(count)/100*Number(tipName))
+    var finalCost=Number(percentage)+Number(count)
+    document.getElementById("costtestA").innerHTML +=
+    '$' + finalCost
 }
 
 function cancelOrder() {
