@@ -1,6 +1,6 @@
 <html>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link src="stylesheet" href="styleSheet.css">
+    <link src="stylesheet" href="stylesheet.css">
     <script src="index.js"></script>
     <style>
         *{
@@ -39,9 +39,9 @@
             background-color: #8a2408;
         }
 
-        .placeItems{
+        /* .placeItems{
             opacity: 1;
-        }
+        } */
 
         .totalItems{
             opacity: 1;
@@ -50,6 +50,22 @@
         h3#orderName{
             font-size: 16pt;
         }
+
+        .placeItems{
+            display: flex;
+            width: 100%;
+    
+            height: fit-content;
+            
+        }
+        .placeItemsLeft{
+            width: 80%;
+            height: fit-content;
+        }
+        .placeItemsRight{
+            width: 20%;
+            height: fit-content;
+
 
         input[type=time]{
             background-color: #B32C06;
@@ -105,16 +121,9 @@
             
             <hr>
 
-            <div class=placeItems>
-                <div class=column style=width:100%;float:left>
-                    <div class=column style=float:left;margin:2px>
-                        <p id=Items></p>
-                    </div>
-
-                    <div class=column style=float:right;margin:2px>
-                        <p id=Cost></p>
-                    </div>
-                </div>
+            <div class="placeItems">
+                <div class="placeItemsLeft"></div>
+                <div class="placeItemsRight"></div>
             </div>
 
             <br/>
@@ -151,6 +160,7 @@
         </div>
     </body>
     <script>
+        checkout++;
 
         // function payment(){
         //     var check=prompt("Please enter CREDIT to pay with credit, DEBIT to pay with debit, or CASH in all caps to pay with cash")
