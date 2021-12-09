@@ -150,6 +150,22 @@ $(document).ready(function getChangedMenu(){    /// when the user menu loads thi
     }      
 });
 
+$(document).ready(function(){ 
+    if (managerPage === 0){
+        let myStr = localStorage.getItem("order");
+        let myArray = myStr.split(",");
+        console.log(myStr);
+        console.log(myArray);
+        for (let i = 0; i < myArray.length++; i++){
+            let h = myArray.shift();
+            order.push(h);
+            console.log(order);
+            $(".item2").first().children(".item-price").children().clone().empty().appendTo(".sidebarItemName").append(h);
+            itemPrice();
+        }
+    }
+});
+
 
 function register() {
     var newName = document.getElementById("name").value;
