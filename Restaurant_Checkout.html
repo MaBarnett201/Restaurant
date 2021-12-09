@@ -50,6 +50,19 @@
         h3#orderName{
             font-size: 16pt;
         }
+
+        input[type=time]{
+            background-color: #B32C06;
+            color: white;
+            padding: 2%;
+            border-style: none;
+            border-radius: 10px;
+            width: 25%;
+        }
+
+        input[type="time"]::-webkit-calendar-picker-indicator{
+            filter: invert(100%) brightness(100%);
+        }
         
     </style>
 
@@ -67,8 +80,8 @@
                     <p id=checkname></p>
                 </div>
 
-                <label for="schedPickup"><b>Please enter desired pick-up time</b></label><br><br>
-                <input type="text" id="schedPickup"><br>
+                <label for="schedPickup"><b>Please Enter Desired Pick-up Time</b></label><br><br>
+                <input type="time" id="schedPickup"><br>
 
                 <br/>
 
