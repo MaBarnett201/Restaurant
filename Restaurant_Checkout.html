@@ -67,6 +67,9 @@
                     <p id=checkname></p>
                 </div>
 
+                <label for="schedPickup"><b>Please enter desired pick-up time</b></label><br><br>
+                <input type="text" id="schedPickup"><br>
+
                 <br/>
 
                 <div class=columnmain style="width:84%;float:left;">
@@ -107,7 +110,7 @@
             <br/>
             <form method="post" action="Receipt.html">
                 <label for="tip"><b>Pay with Cash</b></label><br>
-                <button type="submit" class="btn2">Pay</button>
+                <button type="submit" class="btn2" onclick="schedPickupTime()">Pay</button>
             </form>
             <form method="post" action="ReceiptDuplicate.html">
                 <label for="tip"><b>Pay with Credit</b></label><br><br>

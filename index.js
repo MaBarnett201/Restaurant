@@ -240,6 +240,8 @@ function saveTipCredit(){
     var GTip={YourTip: NewTip}
     var StoredTip=JSON.stringify(GTip)
     localStorage.setItem("tip", StoredTip)
+    var scheduledTime = document.getElementById("schedPickup").value;
+    localStorage.setItem("pickup time", scheduledTime);
     }
 
 function saveTipDebit(){
@@ -247,6 +249,8 @@ function saveTipDebit(){
     var GTip={YourTip: NewTip}
     var StoredTip=JSON.stringify(GTip)
     localStorage.setItem("tip", StoredTip)
+    var scheduledTime = document.getElementById("schedPickup").value;
+    localStorage.setItem("pickup time", scheduledTime);
     }
 
 function addTip(){
@@ -315,6 +319,8 @@ function totalCost(){
 }
 
 function cancelOrder() {
+    localStorage.removeItem("tip");
+    localStorage.removeItem("pickup time");
     localStorage.removeItem("order");
     $(".openOrdersInfo").empty();
 }
@@ -334,4 +340,19 @@ function openOrderDisplay() {
         document.getElementById("orderName").innerHTML +=
         custName;
     }
+}
+
+function schedPickupTime() {
+    var scheduledTime = document.getElementById("schedPickup").value;
+    localStorage.setItem("pickup time", scheduledTime);
+}
+
+function pickUpTime() {
+    var pickTime = localStorage.getItem("pickup time");
+    document.getElementById("pickTime").innerHTML +=
+    pickTime;
+}
+
+function addTotal() {
+
 }
