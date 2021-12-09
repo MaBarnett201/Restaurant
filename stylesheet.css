@@ -118,15 +118,6 @@ button:hover{
     background-color: #8a2408;
 }
 
-button.openOrderBtn{
-    font-size: 14pt;
-    padding: 2%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    width: fit-content;
-}
-
 h5.signup{
     padding-top: 5%;
     padding-left: 2%;
@@ -321,6 +312,13 @@ div.openOrders{
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    min-height: 450px;
+}
+
+div.openOrdersBtns{
+    display: flex;
+    justify-content: center;
+    margin-top: 12%;
 }
 
 div.openOrdersInfo{
@@ -331,8 +329,25 @@ div.openOrdersInfo{
     margin-top: 5%;
 }
 
+h3.openOrderTitles{
+    padding-bottom: 25%;
+}
+
 div.openOrdersInfo p{
     padding-top: 10%;
+}
+
+button.openOrderBtn{
+    font-size: 14pt;
+    padding: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: fit-content;
+}
+
+button.extraBtns{
+    margin: 5% 1%;
 }
 
 header.header{

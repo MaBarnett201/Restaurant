@@ -286,3 +286,20 @@ function cancelOrder() {
     localStorage.removeItem("order");
     $(".openOrdersInfo").empty();
 }
+
+function logOut() {
+    window.location.href = "index.html";
+}
+
+function openOrderDisplay() {
+    if (localStorage.getItem("order") === null){
+        document.getElementById("orderName").innerHTML +=
+        "No open orders";
+    }
+    else{
+        var custInfo = JSON.parse(localStorage.getItem("user"));
+        var custName = custInfo.username;
+        document.getElementById("orderName").innerHTML +=
+        custName;
+    }
+}
