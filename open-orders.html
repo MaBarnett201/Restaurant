@@ -6,28 +6,30 @@
         <script src="index.js"></script>
     </head>
 
-    <body onload="CheckoutName(); addTotal()">
+    <body onload="openOrderDisplay(); addTotal()">
         <section class="manager-options">
             <div class="mng-box openOrders">
                 <h1 class="mng-view openOrders">Open Orders</h1>
 
                 <div class="openOrdersInfo">
                     <div class="openOrdersName">
-                        <h3>Customer Name:</h3>
+                        <h3 class="openOrderTitles">Customer Name:</h3>
                         <h3 id="orderName"></h3>
                         <p id="checkname"></p>
                     </div>
 
                     <div class="openOrdersTotal">
-                        <h3>Order Total:</h3>
+                        <h3 class="openOrderTitles">Order Total:</h3>
 
                         <p id="costtest"></p>
                     </div>
                 </div>
 
-                <button type="button" class="openOrderBtn" onclick="cancelOrder()">Cancel Open Order</button>
-                <button type="button" class="openOrderBtn" onclick="location.href = 'manager_home.html'">Return to Home</button>
-                <button type="button" class="openOrderBtn" onclick="cancelOrder()">Cancel Open Order</button>
+                <div class="openOrdersBtns">
+                    <button type="button" class="openOrderBtn extraBtns" onclick="cancelOrder()">Cancel Open Order</button>
+                    <button type="button" class="openOrderBtn extraBtns" onclick="location.href = 'manager_home.html'">Return to Home</button>
+                    <button type="button" class="openOrderBtn extraBtns" onclick="logOut()">Log Out</button>
+                </div>
             </div>
         </section>
     </body>
