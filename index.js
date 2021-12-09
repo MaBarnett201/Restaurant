@@ -8,6 +8,7 @@ let managerPage = 0;
 let hasChange = localStorage.getItem("wholeMenu");
 let safeUnloadVal = 0;
 let menu = 0;
+let checkout = 0;
 
 function itemPrice(){   /// when an item is added to cart this adds the price
     $(".sidebar-right").children("p").first().clone().prependTo(".sidebar-right");
@@ -165,6 +166,17 @@ $(document).ready(function(){   ///adds items to cart when returning from checko
             itemPrice();
         }
     }
+    else if ( checkout === 1){
+        let myStr = localStorage.getItem("order");
+        let myArray = myStr.split(",");
+        // console.log(myStr);
+        // console.log(myArray);
+        for (let i = 0; i < myArray.length++; i++){
+            let h = myArray.shift();
+            $(".placeItemsLeft").append("<p><p>").append(h);
+    
+        }
+    }
 });
 
 
@@ -285,15 +297,17 @@ function addTimer(){
 }
 
 function addItems(){
-    var costInfo=localStorage.getItem("order")
-    var costName=costInfo.split()
-    var ch=','
-    var count=(costInfo.split(ch).length)*5
-    document.getElementById("itemsbought").innerHTML +=
-    costName
-    document.getElementById("costtest").innerHTML +=
-    '$' + count + '.00'
+    if (localStorage.getItem("order")=== true){
+        var costInfo=localStorage.getItem("order")
+        var costName=costInfo.split()
+        var ch=','
+        var count=(costInfo.split(ch).length)*5
+        document.getElementById("itemsbought").innerHTML +=
+        costName
+        document.getElementById("costtest").innerHTML +=
+        '$' + count + '.00'
     }
+}
 
 function becauseYoureSpecial(){
     var costInfo=localStorage.getItem("order")
