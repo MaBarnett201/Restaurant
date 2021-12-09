@@ -194,7 +194,7 @@ a.checkoutButton:hover{
     justify-content: space-between;
     padding: 3%;
     height: 25px;
-    width: 100%;
+    width: 181px;
 }
 .item-desc{
     display: flex;
@@ -418,6 +418,7 @@ h4#welcomeUser{
     background-color: gray;
     margin-top: 2px;
     margin:0 2px;
+    width: 100%;
 }
 .background{
     background-color: #FFFAEF;
@@ -482,4 +483,29 @@ h4#welcomeUser{
 .expandedParent{
     height: 400px;
     transition: .3s ease-in-out;
+}
+.item-text{
+    height: fit-content;
+    width: 100%;
+}
+.managerBtn{
+    width: 98%;
+    height: 30px;
+    font-size: 10pt;
+    padding: 2%;
+    border-style: none;
+    border-radius: 10px;
+    color: #FFFAEF;
+    background-color: #B32C06;
+    margin: 2px;
+}
+.managerLogout{
+    color: #FFFAEF;
+    text-decoration: none;
+}
+.managerInstructions{
+    margin: 5px;
+}
+.directions{
+    margin-top: 10px;
 }

@@ -175,9 +175,16 @@
             </article>
             </div>
             <div class="sidebarContainer sidebar">
-                <button><a href="index.html">Logout</a></button>
-                <button onclick="saveMenuChanges()">Save and return</button>
-                <button onclick="safeUnload()">Safe reset</button>
+                <button class="managerBtn"><a href="index.html" class="managerLogout">Logout</a></button>
+                <button  class="managerBtn" onclick="saveMenuChanges()">Save and return</button>
+                <button class="managerBtn" onclick="safeUnload()">Safe reset</button>
+                <div class="managerInstructions">
+                    <p class="directions">Click on the item you wish to edit.</p>
+                    <p class="directions">To replace an image, use any google image URL address.</p>
+                    <p class="directions">Save and return, will save all changes and return you to the Manager Homepage.</p>
+                    <p class="directions">Safe reset, will void all changes and return the menu to default.</p>
+
+                </div>
             </div>
         </section>
         </div>

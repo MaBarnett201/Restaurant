@@ -59,10 +59,10 @@ $(document).ready(function() {  /// manager menu, clicked item expands and displ
                 else {
                     $(this).addClass("expanded");
                     $(this).parent().addClass("expandedParent");
-                    let r= $('<input type="button" value="Edit item Image" class="modifyButtons" onclick="editImage()"/>');
-                    let s= $('<input type="button" value="Edit item Name" class="modifyButtons" onclick="editName()"/>');
-                    let t= $('<input type="button" value="Edit item Desc" class="modifyButtons" onclick="editDesc()"/>');
-                    let v= $('<input type="button" value="Close editor" class="modifyButtons" onclick="closeEdit()"/>');
+                    let r= $('<input type="button" value="Edit item Image" class="modifyButtons" onclick="editImage()" style="color:white;"/>');
+                    let s= $('<input type="button" value="Edit item Name" class="modifyButtons" onclick="editName()" style="color:white;"/>');
+                    let t= $('<input type="button" value="Edit item Desc" class="modifyButtons" onclick="editDesc()" style="color:white;"/>');
+                    let v= $('<input type="button" value="Close editor" class="modifyButtons" onclick="closeEdit()" style="color:white;"/>');
                     $(this).after().append(r);
                     $(this).after().append(s);
                     $(this).after().append(t);
@@ -90,7 +90,7 @@ $(document).ready(function() {  /// manager menu, clicked item expands and displ
 });
 
 function editImage(){   // edits the images but does not work yet
-    let gimg = prompt('picture URL', "IMG URL");
+    let gimg = prompt('picture URL', "Google IMG URL");
     $(".expanded").children("img").attr("src", gimg);
 };
 
