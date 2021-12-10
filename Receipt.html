@@ -52,8 +52,42 @@
         .next{
             display:inline-block
         }
+        .placeItems{
+            display: flex;
+            width: 100%;
+    
+            height: fit-content;
+            
+        }
+        .placeItemsLeft{
+            width: 80%;
+            height: fit-content;
+        }
+        .placeItemsRight{
+            width: 20%;
+            height: fit-content;
+        }
+        .buttonContainer{
+            display: flex;
+            width: 100%;
+            height: fit-content;
+        }
+        .buttonLeft{
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            width: 50%;
+            height: fit-content;
+        }
+        .buttonRight{
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            width: 50%;
+            height: fit-content;
+        }
     </style>
-    <body onload="CheckoutName(); pickUpTime(); addItems(); addTimer(); becauseYoureSpecial()">
+    <body onload="CheckoutName(); pickUpTime(); addItems(); addTimer(); becauseYoureSpecial();">
         <div class=columnmain>
             <div class=column style=text-align:center>
                 <h1>Dine & Dash Receipt</h1>
@@ -82,13 +116,14 @@
 
             <div class=column>
                 <h3>Items purchased:</h3>
-                <div class=column style=margin:2px>
-                    <p id=itemsbought></p>
+                <div class="placeItems">
+                    <div class="placeItemsLeft"></div>
+                    <div class="placeItemsRight"></div>
                 </div>
 
                 <h3>Cost:</h3>
                 <div class=column style=margin:2px>
-                    <p id=costtest class=next></p>
+                    <p id=costtest>$<span></span>.00</p>
                 </div>
 
                 <h3>Tip:</h3>
@@ -172,5 +207,8 @@
         //paragraph.appendChild(text)
         //}
         //}
+    </script>
+    <script>
+        receipt ++
     </script>
 </html>
