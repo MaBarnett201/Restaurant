@@ -295,6 +295,10 @@ function addTip(){
         window.location.href="Restaurant_Checkout.html"
         alert("Please enter a number")
         }
+    else if(tipName.indexOf('.')>0){
+        window.location.href="Restaurant_Checkout.html"
+        alert("Please enter a whole number")
+    }
     }
 
 function CheckoutName() {
@@ -330,10 +334,11 @@ function becauseYoureSpecial(){
     var costName=costInfo.split()
     var ch=','
     var count=(costInfo.split(ch).length)*5
-    document.getElementById("itemsbought").innerHTML +=
-    costName
+    var tipInfo=JSON.parse(localStorage.getItem("tip"))
+    var tipName=tipInfo.YourTip;
+    var finalCost=count
     document.getElementById("costtestF").innerHTML +=
-    '$' + count + '.00'
+    '$' + finalCost + '.00'
     }
 
 function totalCost(){
