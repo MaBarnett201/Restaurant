@@ -192,10 +192,6 @@ $(document).ready(function(){   ///adds items to cart when returning from checko
     }
 });
 
-function clearOrder(){
-    localStorage.removeItem("order");
-};
-
 function register() {
     var newName = document.getElementById("name").value;
     var newEmail = document.getElementById("email").value;
@@ -387,8 +383,4 @@ function pickUpTime() {
     var pickTime = localStorage.getItem("pickup time");
     document.getElementById("pickTime").innerHTML +=
     pickTime;
-}
-
-function addTotal() {
-
 }
