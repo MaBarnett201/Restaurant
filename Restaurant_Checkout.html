@@ -30,13 +30,19 @@
             color: #FFFAEF;
             background-color: #B32C06;
             border-style: none;
-            display: inline-block;
+            margin-top: 10px;
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .btn2:hover{
-            box-shadow: 5px 5px 5px rgb(31, 31, 31);
             transition: 0.3s;
             background-color: #8a2408;
+        }
+
+        button.payCash{
+            margin-top: 70px;
         }
 
         /* .placeItems{
@@ -75,8 +81,49 @@
             width: 25%;
         }
 
+        label{
+            text-align: center;
+            margin: 5% auto;
+            display: flex;
+            width: fit-content;
+        }
+
         input[type="time"]::-webkit-calendar-picker-indicator{
             filter: invert(100%) brightness(100%);
+        }
+
+        input[type="time"]:hover{
+            background-color: #8a2408;
+        }
+
+        input[type="text"]{
+            display: flex;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            justify-self: center;
+        }
+
+        div.checkoutForms{
+            display: flex;
+        }
+
+        div.cashPay{
+            display: flex;
+            justify-content: center;
+            flex: 1;
+        }
+
+        div.creditPay{
+            display: flex;
+            justify-content: center;
+            flex: 1;
+        }
+
+        div.debitPay{
+            display: flex;
+            justify-content: center;
+            flex: 1;
         }
         
     </style>
@@ -95,7 +142,7 @@
                     <p id=checkname></p>
                 </div>
 
-                <label for="schedPickup"><b>Please Enter Desired Pick-up Time</b></label><br><br>
+                <label for="schedPickup" style="text-align: left; margin: 0;"><b>Please Enter Desired Pick-up Time</b></label><br><br>
                 <input type="time" id="schedPickup"><br>
 
                 <br/>
@@ -129,22 +176,33 @@
             <br/>
             <br/>
             <br/>
-            <form method="post" action="Receipt.html">
-                <label for="tip"><b>Pay with Cash</b></label><br>
-                <button type="submit" class="btn2" onclick="schedPickupTime()">Pay</button>
-            </form>
-            <form method="post" action="ReceiptDuplicate.html">
-                <label for="tip"><b>Pay with Credit</b></label><br><br>
-                <label for="tip"><b>Tip %</b></label><br>
-                <input type="text" id="CRtip" required><br>
-                <button type="submit" onclick="saveTipCredit()" class="btn2">Pay</button>
-            </form>
-            <form method="post" action="ReceiptDuplicateB.html">
-                <label for="tip"><b>Pay with Debit</b></label><br><br>
-                <label for="tip"><b>Tip %</b></label><br>
-                <input type="text" id="DEtipB" required><br>
-                <button type="submit" onclick="saveTipDebit()" class="btn2">Pay</button>
-            </form>
+
+            <div class="checkoutForms">
+                <div class="cashPay">
+                    <form method="post" action="Receipt.html">
+                        <label for="tip"><b>Pay with Cash</b></label>
+                        <button type="submit" class="btn2 payCash" onclick="schedPickupTime()">Pay</button>
+                    </form>
+                </div>
+
+                <div class="creditPay">
+                    <form method="post" action="ReceiptDuplicate.html">
+                        <label for="tip"><b>Pay with Credit</b></label>
+                        <label for="tip"><b>Tip %</b></label>
+                        <input type="text" id="CRtip" required>
+                        <button type="submit" onclick="saveTipCredit()" class="btn2">Pay</button>
+                    </form>
+                </div>
+
+                <div class="debitPay">
+                    <form method="post" action="ReceiptDuplicateB.html">
+                        <label for="tip"><b>Pay with Debit</b></label>
+                        <label for="tip"><b>Tip %</b></label>
+                        <input type="text" id="DEtipB" required>
+                        <button type="submit" onclick="saveTipDebit()" class="btn2">Pay</button>
+                    </form>
+                </div>
+            </div>
         </div>
 
         <br/>
