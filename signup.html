@@ -5,21 +5,41 @@
         </title>
         <link rel="stylesheet" href="styleSheet.css">
     </head>
+    <style>
+        .btn2{
+            font-size: 20pt;
+    padding: 2%;
+    border-style: none;
+    border-radius: 10px;
+    color: #FFFAEF;
+    background-color: #B32C06;
+    margin-left: 33%;
+    margin-top: 3%;
+    margin-bottom: 1%;
+        }
+
+        .btn2:hover{
+            transition: 0.3s;
+            background-color: #8a2408;
+        }
+    </style>
     <body>
         <section class="login">
             <div class="curve">
                 <div class="login-fields">
                     <h1 class="dine signup">Dine & Dash</h1>
                     <h3 class="log-in">Sign Up!</h3>
-                    <form method="post" action="menu.html">
+                    <div action="menu.html">
                         <label for="name">Full Name</label><br>
                         <input type="text" id="name" required><br>
                         <label for="email">E-mail</label><br>
                         <input type="text" id="email" required><br>
                         <label for="password">Password</label><br>
                         <input type="text" id="password" required><br>
-                        <button type="submit" onclick="register()">Sign Up!</button>
-                    </form>
+                        <div>
+                        <a href=menu.html class=btn2 onclick="register()" style=text-decoration:none;cursor:context-menu>Sign Up!</a>
+                    </div>
+                    </div>
                 </div>
             </div>
         </section>
