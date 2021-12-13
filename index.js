@@ -196,6 +196,7 @@ function hidebuttons(){
     $(".buttonContainer").css("visibility", "hidden");
     console.log("buttons hidden")
     window.print();
+    $(".buttonContainer").css("visibility", "visible");
 }
 
 function register() {
