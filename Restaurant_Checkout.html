@@ -179,28 +179,34 @@
 
             <div class="checkoutForms">
                 <div class="cashPay">
-                    <form method="post" action="Receipt.html">
+                    <div class=column action="Receipt.html">
                         <label for="tip"><b>Pay with Cash</b></label>
-                        <button type="submit" class="btn2 payCash" onclick="schedPickupTime()">Pay</button>
-                    </form>
+                        <div class=column style=width:79%;margin-left:auto;margin-right:auto>
+                        <a href=Receipt.html class="btn2 payCash" onclick="schedPickupTime()" style=text-decoration:none;cursor:context-menu>Pay</a>
+                    </div>
+                    </div>
                 </div>
 
                 <div class="creditPay">
-                    <form method="post" action="ReceiptDuplicate.html">
+                    <div class=column action="ReceiptDuplicate.html">
                         <label for="tip"><b>Pay with Credit</b></label>
                         <label for="tip"><b>Tip %</b></label>
                         <input type="text" id="CRtip" required>
-                        <button type="submit" onclick="saveTipCredit()" class="btn2">Pay</button>
-                    </form>
+                        <div class=column style=width:50%;margin-left:auto;margin-right:auto>
+                        <a href=ReceiptDuplicate.html onclick="saveTipCredit()" class="btn2" style=text-decoration:none;cursor:context-menu>Pay</a>
+                    </div>
+                    </div>
                 </div>
 
                 <div class="debitPay">
-                    <form method="post" action="ReceiptDuplicateB.html">
+                    <div class=column action="ReceiptDuplicateB.html">
                         <label for="tip"><b>Pay with Debit</b></label>
                         <label for="tip"><b>Tip %</b></label>
                         <input type="text" id="DEtipB" required>
-                        <button type="submit" onclick="saveTipDebit()" class="btn2">Pay</button>
-                    </form>
+                        <div class=column style=width:50%;margin-left:auto;margin-right:auto>
+                        <a href=ReceiptDuplicateB.html onclick="saveTipDebit()" class="btn2" style=text-decoration:none;cursor:context-menu>Pay</a>
+                    </div>
+                    </div>
                 </div>
             </div>
         </div>
