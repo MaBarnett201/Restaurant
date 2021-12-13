@@ -192,6 +192,12 @@ $(document).ready(function(){   ///adds items to cart when returning from checko
     }
 });
 
+function hidebuttons(){
+    $(".buttonContainer").css("visibility", "hidden");
+    console.log("buttons hidden")
+    window.print();
+}
+
 function register() {
     var newName = document.getElementById("name").value;
     var newEmail = document.getElementById("email").value;
